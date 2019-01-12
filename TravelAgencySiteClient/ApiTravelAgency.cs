@@ -56,7 +56,7 @@ namespace TravelAgencySiteClient
         {
             //Thread.Sleep(5000);
             string responseJson
-                = await LoadDataAsync("getCountries", country);
+                = await LoadDataAsync("getCities", "&country=" + country);
 
             return responseJson;
         }
@@ -70,7 +70,7 @@ namespace TravelAgencySiteClient
 
             string requestStr = "token=ps_rpo_1" +
                 "&param=" + param +
-                "&value=" + value;
+                value;
             byte[] data = Encoding.UTF8.GetBytes(requestStr);
 
             request.ContentLength = data.Length;

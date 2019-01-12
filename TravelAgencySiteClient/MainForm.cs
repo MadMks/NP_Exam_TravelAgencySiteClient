@@ -51,11 +51,11 @@ namespace TravelAgencySiteClient
 
         private async void FillingDataComboBoxCities(string country)
         {
-            Console.WriteLine(">>> loading Cities" + " for country: " + country);
-
-
             responseJson = await api.LoadCitiesDataAsync(country);
-            Console.WriteLine("result");
+            
+            this.comboBoxCities.DataSource
+                = JsonConvert.DeserializeObject<List<City>>(responseJson)
+                .Select(c => c.cityName).ToList();
         }
 
         private async void FillingDataComboBoxCountries()
