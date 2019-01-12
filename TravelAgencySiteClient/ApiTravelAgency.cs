@@ -17,7 +17,7 @@ namespace TravelAgencySiteClient
 
         }
 
-        public string LoadCountriesData()
+        public async Task<string> LoadCountriesDataAsync()
         {
             WebRequest request = WebRequest
                 .Create("http://localhost:81/apiExem/api.php");
@@ -38,7 +38,7 @@ namespace TravelAgencySiteClient
 
 
             // Считываем ответ.
-            WebResponse response = request.GetResponse();
+            WebResponse response = await request.GetResponseAsync();
             string responseStr = null;
             using (Stream stream = response.GetResponseStream())
             {

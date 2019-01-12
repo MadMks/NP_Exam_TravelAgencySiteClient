@@ -36,10 +36,10 @@ namespace TravelAgencySiteClient
             this.tabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
         }
 
-        private void FillingDataComboBoxCountries()
+        private async void FillingDataComboBoxCountries()
         {
             //this.LoadCountriesData();
-            responseJson = api.LoadCountriesData();
+            responseJson = await api.LoadCountriesDataAsync();
 
             this.comboBoxCountries.DataSource
                 = JsonConvert.DeserializeObject<List<Country>>(responseJson)
