@@ -43,10 +43,6 @@ namespace TravelAgencySiteClient
 
             // Загрузка списка городов.
             this.FillingDataComboBoxCities(country);
-            Console.WriteLine("--- main ");
-            // Включение комббокса и кнопки для выбора города.
-            this.comboBoxCities.Enabled = true;
-            this.buttonSelectCity.Enabled = true;
         }
 
         private async void FillingDataComboBoxCities(string country)
@@ -56,6 +52,10 @@ namespace TravelAgencySiteClient
             this.comboBoxCities.DataSource
                 = JsonConvert.DeserializeObject<List<City>>(responseJson)
                 .Select(c => c.cityName).ToList();
+
+            // Включение комбобокса и кнопки для выбора города.
+            this.comboBoxCities.Enabled = true;
+            this.buttonSelectCity.Enabled = true;
         }
 
         private async void FillingDataComboBoxCountries()
