@@ -32,17 +32,19 @@ namespace TravelAgencySiteClient
 
         private void FillingDataComboBoxCountries()
         {
-            this.LoadCountriesData();
+            //this.LoadCountriesData();
+            responseJson = ApiTravelAgency.LoadCountriesData();
 
             this.comboBoxCountries.DataSource
                 = JsonConvert.DeserializeObject<List<Country>>(responseJson)
-                .Select(c => c.Name).ToList();
+                .Select(c => c.countryName).ToList();
+            //Console.WriteLine("responseJson = " + responseJson);
         }
 
-        private void LoadCountriesData()
-        {
-            throw new NotImplementedException();
-        }
+        //private void LoadCountriesData()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {

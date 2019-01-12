@@ -8,21 +8,23 @@ namespace TravelAgencySiteClient
 {
     public class Country
     {
-        private int id;
-        private string countryName;
+        //private int id;
+        //private string countryName;
 
 
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-        
-        public string Name
-        {
-            get { return countryName; }
-            set { countryName = value; }
-        }
+        //public int Id
+        //{
+        //    get { return id; }
+        //    set { id = value; }
+        //}
 
+        //public string Name
+        //{
+        //    get { return countryName; }
+        //    set { countryName = value; }
+        //}
+
+        public int id { get; set; }
+        public string countryName { get; set; }
     }
 }

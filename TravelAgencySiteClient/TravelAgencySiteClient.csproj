@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiTravelAgency.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
