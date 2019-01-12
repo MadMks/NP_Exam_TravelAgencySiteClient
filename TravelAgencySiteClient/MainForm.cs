@@ -34,8 +34,9 @@ namespace TravelAgencySiteClient
         {
             this.LoadCountriesData();
 
-            this.comboBoxCountries.DataSource 
-                = JsonConvert.DeserializeObject<List<Country>>()
+            this.comboBoxCountries.DataSource
+                = JsonConvert.DeserializeObject<List<Country>>(responseJson)
+                .Select(c => c.Name).ToList();
         }
 
         private void LoadCountriesData()
@@ -48,6 +49,7 @@ namespace TravelAgencySiteClient
             if (tabControl.SelectedTab.Name == tabPageTours.Name)
             {
                 Console.WriteLine("TODO: loading countries");
+                this.FillingDataComboBoxCountries();
             }
             // Для вкаладки регистрация подгружать ничего не нужно
             else if (tabControl.SelectedTab.Name == tabPageAdminForm.Name)
