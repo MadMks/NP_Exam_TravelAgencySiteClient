@@ -33,7 +33,7 @@
             this.tabPageRegistration = new System.Windows.Forms.TabPage();
             this.tabPageAdminForm = new System.Windows.Forms.TabPage();
             this.labelSelectTours = new System.Windows.Forms.Label();
-            this.comboBoxCountrys = new System.Windows.Forms.ComboBox();
+            this.comboBoxCountries = new System.Windows.Forms.ComboBox();
             this.buttonSelectCountry = new System.Windows.Forms.Button();
             this.comboBoxCities = new System.Windows.Forms.ComboBox();
             this.buttonSelectCity = new System.Windows.Forms.Button();
@@ -60,7 +60,7 @@
             this.tabPageTours.Controls.Add(this.buttonSelectCity);
             this.tabPageTours.Controls.Add(this.comboBoxCities);
             this.tabPageTours.Controls.Add(this.buttonSelectCountry);
-            this.tabPageTours.Controls.Add(this.comboBoxCountrys);
+            this.tabPageTours.Controls.Add(this.comboBoxCountries);
             this.tabPageTours.Controls.Add(this.labelSelectTours);
             this.tabPageTours.Location = new System.Drawing.Point(4, 22);
             this.tabPageTours.Name = "tabPageTours";
@@ -99,13 +99,13 @@
             this.labelSelectTours.TabIndex = 0;
             this.labelSelectTours.Text = "Выбор тура";
             // 
-            // comboBoxCountrys
+            // comboBoxCountries
             // 
-            this.comboBoxCountrys.FormattingEnabled = true;
-            this.comboBoxCountrys.Location = new System.Drawing.Point(10, 44);
-            this.comboBoxCountrys.Name = "comboBoxCountrys";
-            this.comboBoxCountrys.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCountrys.TabIndex = 1;
+            this.comboBoxCountries.FormattingEnabled = true;
+            this.comboBoxCountries.Location = new System.Drawing.Point(10, 44);
+            this.comboBoxCountries.Name = "comboBoxCountries";
+            this.comboBoxCountries.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCountries.TabIndex = 1;
             // 
             // buttonSelectCountry
             // 
@@ -169,7 +169,7 @@
         private System.Windows.Forms.Button buttonSelectCity;
         private System.Windows.Forms.ComboBox comboBoxCities;
         private System.Windows.Forms.Button buttonSelectCountry;
-        private System.Windows.Forms.ComboBox comboBoxCountrys;
+        private System.Windows.Forms.ComboBox comboBoxCountries;
     }
 }
 
