@@ -14,6 +14,7 @@ namespace TravelAgencySiteClient
     public partial class MainForm : Form
     {
         private string responseJson;
+        private ApiTravelAgency api = null;
 
         public MainForm()
         {
@@ -24,8 +25,13 @@ namespace TravelAgencySiteClient
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            api = new ApiTravelAgency();
+
             // TODO: Метод -> загрузить страны в комбо на странице туров.
             this.FillingDataComboBoxCountries();
+
+            // Test async
+            Console.WriteLine("main");
 
             this.tabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
         }
@@ -33,18 +39,13 @@ namespace TravelAgencySiteClient
         private void FillingDataComboBoxCountries()
         {
             //this.LoadCountriesData();
-            responseJson = ApiTravelAgency.LoadCountriesData();
+            responseJson = api.LoadCountriesData();
 
             this.comboBoxCountries.DataSource
                 = JsonConvert.DeserializeObject<List<Country>>(responseJson)
                 .Select(c => c.countryName).ToList();
             //Console.WriteLine("responseJson = " + responseJson);
         }
-
-        //private void LoadCountriesData()
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {

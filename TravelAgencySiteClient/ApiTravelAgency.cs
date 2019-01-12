@@ -4,13 +4,20 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace TravelAgencySiteClient
 {
     class ApiTravelAgency
     {
-        public static string LoadCountriesData()
+
+        public ApiTravelAgency()
+        {
+
+        }
+
+        public string LoadCountriesData()
         {
             WebRequest request = WebRequest
                 .Create("http://localhost:81/apiExem/api.php");
@@ -43,7 +50,11 @@ namespace TravelAgencySiteClient
             response.Close();
 
             // Test
-            Console.WriteLine("static string LoadCountriesData");
+            Console.WriteLine("start load");
+            Thread.Sleep(5000);
+            Console.WriteLine("stop load");
+            // Test
+            Console.WriteLine(" string LoadCountriesData");
             return responseStr;
         }
     }
