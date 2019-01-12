@@ -34,6 +34,25 @@ namespace TravelAgencySiteClient
 
             this.tabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
             this.buttonSelectCountry.Click += ButtonSelectCountry_Click;
+            this.buttonSelectCity.Click += ButtonSelectCity_Click;
+            this.dataGridViewTours.CellDoubleClick += DataGridViewTours_CellDoubleClick;
+        }
+
+        private void DataGridViewTours_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine("Показываем страницу отеля");
+            Console.WriteLine((sender as DataGridView).SelectedCells[1].Value);
+        }
+
+        private void ButtonSelectCity_Click(object sender, EventArgs e)
+        {
+            // TODO:
+
+            Console.WriteLine(" > Загрузка отелей в таблицу.");
+
+            this.dataGridViewTours.DataSource
+                = JsonConvert.DeserializeObject<List<City>>(responseJson)
+                .ToList();
         }
 
         private void ButtonSelectCountry_Click(object sender, EventArgs e)

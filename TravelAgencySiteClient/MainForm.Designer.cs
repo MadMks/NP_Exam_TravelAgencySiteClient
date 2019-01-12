@@ -37,10 +37,10 @@
             this.buttonSelectCountry = new System.Windows.Forms.Button();
             this.comboBoxCities = new System.Windows.Forms.ComboBox();
             this.buttonSelectCity = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTours = new System.Windows.Forms.DataGridView();
             this.tabControl.SuspendLayout();
             this.tabPageTours.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -56,7 +56,7 @@
             // 
             // tabPageTours
             // 
-            this.tabPageTours.Controls.Add(this.dataGridView1);
+            this.tabPageTours.Controls.Add(this.dataGridViewTours);
             this.tabPageTours.Controls.Add(this.buttonSelectCity);
             this.tabPageTours.Controls.Add(this.comboBoxCities);
             this.tabPageTours.Controls.Add(this.buttonSelectCountry);
@@ -135,14 +135,17 @@
             this.buttonSelectCity.Text = "Выбрать город";
             this.buttonSelectCity.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewTours
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 123);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(544, 177);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridViewTours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTours.Location = new System.Drawing.Point(13, 123);
+            this.dataGridViewTours.MultiSelect = false;
+            this.dataGridViewTours.Name = "dataGridViewTours";
+            this.dataGridViewTours.ReadOnly = true;
+            this.dataGridViewTours.RowTemplate.Height = 23;
+            this.dataGridViewTours.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewTours.Size = new System.Drawing.Size(544, 177);
+            this.dataGridViewTours.TabIndex = 5;
             // 
             // MainForm
             // 
@@ -155,7 +158,7 @@
             this.tabControl.ResumeLayout(false);
             this.tabPageTours.ResumeLayout(false);
             this.tabPageTours.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,7 +170,7 @@
         private System.Windows.Forms.TabPage tabPageRegistration;
         private System.Windows.Forms.TabPage tabPageAdminForm;
         private System.Windows.Forms.Label labelSelectTours;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewTours;
         private System.Windows.Forms.Button buttonSelectCity;
         private System.Windows.Forms.ComboBox comboBoxCities;
         private System.Windows.Forms.Button buttonSelectCountry;

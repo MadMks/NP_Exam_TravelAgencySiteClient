@@ -14,7 +14,7 @@ namespace TravelAgencySiteClient
 
         public ApiTravelAgency()
         {
-
+            // TODO: настройки для класса Апи.
         }
 
         public async Task<string> LoadCountriesDataAsync()
