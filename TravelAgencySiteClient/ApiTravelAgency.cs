@@ -49,12 +49,51 @@ namespace TravelAgencySiteClient
             }
             response.Close();
 
-            // Test
-            Console.WriteLine("start load");
+            return responseStr;
+        }
+
+        public async Task<string> LoadCitiesDataAsync(string country)
+        {
             //Thread.Sleep(5000);
-            Console.WriteLine("stop load");
-            // Test
-            Console.WriteLine(" string LoadCountriesData");
+            string responseJson
+                = await LoadDataAsync("getCountries", country);
+
+            return responseJson;
+        }
+
+        private async Task<string> LoadDataAsync(string param, string value)
+        {
+            WebRequest request = WebRequest
+                .Create("http://localhost:81/apiExem/api.php");
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+
+            string requestStr = "token=ps_rpo_1" +
+                "&param=" + param +
+                "&value=" + value;
+            byte[] data = Encoding.UTF8.GetBytes(requestStr);
+
+            request.ContentLength = data.Length;
+
+            // Записываем данные в поток запроса.
+            using (Stream stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+
+
+            // Считываем ответ.
+            WebResponse response = await request.GetResponseAsync();
+            string responseStr = null;
+            using (Stream stream = response.GetResponseStream())
+            {
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    responseStr = reader.ReadToEnd();
+                }
+            }
+            response.Close();
+
             return responseStr;
         }
     }

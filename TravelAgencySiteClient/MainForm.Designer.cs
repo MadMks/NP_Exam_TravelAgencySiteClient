@@ -101,6 +101,7 @@
             // 
             // comboBoxCountries
             // 
+            this.comboBoxCountries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCountries.FormattingEnabled = true;
             this.comboBoxCountries.Location = new System.Drawing.Point(10, 44);
             this.comboBoxCountries.Name = "comboBoxCountries";
@@ -113,11 +114,12 @@
             this.buttonSelectCountry.Name = "buttonSelectCountry";
             this.buttonSelectCountry.Size = new System.Drawing.Size(105, 23);
             this.buttonSelectCountry.TabIndex = 2;
-            this.buttonSelectCountry.Text = "Выбор страны";
+            this.buttonSelectCountry.Text = "Выбрать страну";
             this.buttonSelectCountry.UseVisualStyleBackColor = true;
             // 
             // comboBoxCities
             // 
+            this.comboBoxCities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCities.FormattingEnabled = true;
             this.comboBoxCities.Location = new System.Drawing.Point(10, 82);
             this.comboBoxCities.Name = "comboBoxCities";
@@ -130,7 +132,7 @@
             this.buttonSelectCity.Name = "buttonSelectCity";
             this.buttonSelectCity.Size = new System.Drawing.Size(105, 23);
             this.buttonSelectCity.TabIndex = 4;
-            this.buttonSelectCity.Text = "Выбор города";
+            this.buttonSelectCity.Text = "Выбрать город";
             this.buttonSelectCity.UseVisualStyleBackColor = true;
             // 
             // dataGridView1

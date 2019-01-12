@@ -27,17 +27,41 @@ namespace TravelAgencySiteClient
         {
             api = new ApiTravelAgency();
 
-            // TODO: Метод -> загрузить страны в комбо на странице туров.
+            this.comboBoxCities.Enabled = false;
+            this.buttonSelectCity.Enabled = false;
+            
             this.FillingDataComboBoxCountries();
 
-            // Test async
-            Console.WriteLine("main");
-
             this.tabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
+            this.buttonSelectCountry.Click += ButtonSelectCountry_Click;
+        }
+
+        private void ButtonSelectCountry_Click(object sender, EventArgs e)
+        {
+            // Выбранная страна.
+            string country = comboBoxCountries.SelectedItem.ToString();
+
+            // Загрузка списка городов.
+            this.FillingDataComboBoxCities(country);
+            Console.WriteLine("--- main ");
+            // Включение комббокса и кнопки для выбора города.
+            this.comboBoxCities.Enabled = true;
+            this.buttonSelectCity.Enabled = true;
+        }
+
+        private async void FillingDataComboBoxCities(string country)
+        {
+            Console.WriteLine(">>> loading Cities" + " for country: " + country);
+
+
+            responseJson = await api.LoadCitiesDataAsync(country);
+            Console.WriteLine("result");
         }
 
         private async void FillingDataComboBoxCountries()
         {
+            Console.WriteLine(">>> loading Countries");
+
             //this.comboBoxCountries.UseWaitCursor = true;  // TODO ???
             this.buttonSelectCountry.Enabled = false;
 
@@ -55,10 +79,9 @@ namespace TravelAgencySiteClient
         {
             if (tabControl.SelectedTab.Name == tabPageTours.Name)
             {
-                Console.WriteLine("TODO: loading countries");
                 this.FillingDataComboBoxCountries();
             }
-            // Для вкаладки регистрация подгружать ничего не нужно
+            // Для вкаладки регистрация подгружать ничего не нужно.
             else if (tabControl.SelectedTab.Name == tabPageAdminForm.Name)
             {
                 Console.WriteLine("TODO: loading admins data all table");
