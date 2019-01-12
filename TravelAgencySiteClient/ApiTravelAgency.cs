@@ -51,7 +51,7 @@ namespace TravelAgencySiteClient
 
             // Test
             Console.WriteLine("start load");
-            Thread.Sleep(5000);
+            //Thread.Sleep(5000);
             Console.WriteLine("stop load");
             // Test
             Console.WriteLine(" string LoadCountriesData");

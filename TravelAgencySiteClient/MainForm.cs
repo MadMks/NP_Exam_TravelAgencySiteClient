@@ -38,13 +38,17 @@ namespace TravelAgencySiteClient
 
         private async void FillingDataComboBoxCountries()
         {
-            //this.LoadCountriesData();
+            //this.comboBoxCountries.UseWaitCursor = true;  // TODO ???
+            this.buttonSelectCountry.Enabled = false;
+
             responseJson = await api.LoadCountriesDataAsync();
 
             this.comboBoxCountries.DataSource
                 = JsonConvert.DeserializeObject<List<Country>>(responseJson)
                 .Select(c => c.countryName).ToList();
-            //Console.WriteLine("responseJson = " + responseJson);
+
+            //this.comboBoxCountries.UseWaitCursor = false;   // TODO ???
+            this.buttonSelectCountry.Enabled = true;
         }
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
