@@ -53,8 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\ApiTravelAgency.cs" />
-    <Compile Include="City.cs" />
-    <Compile Include="Country.cs" />
+    <Compile Include="Entities\City.cs" />
+    <Compile Include="Entities\Country.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
