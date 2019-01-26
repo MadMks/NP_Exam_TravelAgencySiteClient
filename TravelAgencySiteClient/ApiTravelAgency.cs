@@ -17,6 +17,11 @@ namespace TravelAgencySiteClient
             // TODO: настройки для класса Апи.
         }
 
+
+        //
+        // Методы загрузки сущностей.
+        //
+
         public async Task<string> LoadCountriesDataAsync()
         {
             string responseJson
@@ -32,6 +37,11 @@ namespace TravelAgencySiteClient
 
             return responseJson;
         }
+
+
+        //
+        // Загрузка данных.
+        //
 
         private async Task<string> LoadDataAsync(string param, string value)
         {
