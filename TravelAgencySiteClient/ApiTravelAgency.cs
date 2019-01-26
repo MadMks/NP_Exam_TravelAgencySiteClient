@@ -11,8 +11,12 @@ namespace TravelAgencySiteClient
 {
     class ApiTravelAgency
     {
+        private RequestStringFactory requestFactory = null;
+
         public ApiTravelAgency()
         {
+            requestFactory = new RequestStringFactory("ps_rpo_1");
+
             // TODO: настройки для класса Апи.
         }
 
@@ -23,18 +27,18 @@ namespace TravelAgencySiteClient
 
         public async Task<string> LoadCountriesDataAsync()
         {
-            Console.WriteLine(QueryValue.getCountries);
+            string request = requestFactory.GenerateCountries();
 
-            string responseJson
-                = await LoadDataAsync(QueryValue.getCountries, null);
+            string responseJson = await LoadDataAsync(request);
 
             return responseJson;
         }
 
         public async Task<string> LoadCitiesDataAsync(string country)
         {
-            string responseJson
-                = await LoadDataAsync(QueryValue.getCities, "&country=" + country);
+            string request = requestFactory.GenerateCities(country);
+
+            string responseJson = await LoadDataAsync(request);
 
             return responseJson;
         }
@@ -44,19 +48,19 @@ namespace TravelAgencySiteClient
         // Загрузка данных.
         //
 
-        private async Task<string> LoadDataAsync(string param, string value)
+        private async Task<string> LoadDataAsync(/*string param, string value*/string requestStr)
         {
             WebRequest request = WebRequest
                 .Create("http://localhost:81/apiExem/api.php");
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
 
-            string requestStr = "token=ps_rpo_1" +
-                "&param=" + param;
-            if (value != null)
-            {
-                requestStr = requestStr + value;
-            }
+            //string requestStr = "token=ps_rpo_1" +
+            //    "&param=" + param;
+            //if (value != null)
+            //{
+            //    requestStr = requestStr + value;
+            //}
 
             byte[] data = Encoding.UTF8.GetBytes(requestStr);
 
