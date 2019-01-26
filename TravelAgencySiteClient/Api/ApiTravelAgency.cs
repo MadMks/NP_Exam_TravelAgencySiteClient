@@ -11,11 +11,12 @@ namespace TravelAgencySiteClient
 {
     class ApiTravelAgency
     {
+        private const string TOKEN = "ps_rpo_1";
         private RequestStringFactory requestFactory = null;
 
         public ApiTravelAgency()
         {
-            requestFactory = new RequestStringFactory("ps_rpo_1");
+            requestFactory = new RequestStringFactory(TOKEN);
 
             // TODO: настройки для класса Апи.
         }
@@ -48,19 +49,13 @@ namespace TravelAgencySiteClient
         // Загрузка данных.
         //
 
-        private async Task<string> LoadDataAsync(/*string param, string value*/string requestStr)
+        private async Task<string> LoadDataAsync(string requestStr)
         {
             WebRequest request = WebRequest
                 .Create("http://localhost:81/apiExem/api.php");
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
 
-            //string requestStr = "token=ps_rpo_1" +
-            //    "&param=" + param;
-            //if (value != null)
-            //{
-            //    requestStr = requestStr + value;
-            //}
 
             byte[] data = Encoding.UTF8.GetBytes(requestStr);
 
