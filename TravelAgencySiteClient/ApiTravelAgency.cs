@@ -11,7 +11,6 @@ namespace TravelAgencySiteClient
 {
     class ApiTravelAgency
     {
-
         public ApiTravelAgency()
         {
             // TODO: настройки для класса Апи.
@@ -24,8 +23,10 @@ namespace TravelAgencySiteClient
 
         public async Task<string> LoadCountriesDataAsync()
         {
+            Console.WriteLine(QueryValue.getCountries);
+
             string responseJson
-                = await LoadDataAsync("getCountries", null);
+                = await LoadDataAsync(QueryValue.getCountries, null);
 
             return responseJson;
         }
@@ -33,7 +34,7 @@ namespace TravelAgencySiteClient
         public async Task<string> LoadCitiesDataAsync(string country)
         {
             string responseJson
-                = await LoadDataAsync("getCities", "&country=" + country);
+                = await LoadDataAsync(QueryValue.getCities, "&country=" + country);
 
             return responseJson;
         }
