@@ -8,8 +8,9 @@ namespace TravelAgencySiteClient
 {
     class QueryValue
     {
-        public static string getCountries { get; set; }
-        public static string getCities { get; set; }
+        public static string getCountries { get; }
+        public static string getCities { get; }
+        public static string getHotels { get; }
 
         public QueryValue() {}
 
@@ -17,6 +18,7 @@ namespace TravelAgencySiteClient
         {
             getCountries = "getCountries";
             getCities = "getCities";
+            getHotels = "getHotels";
         }
 
         public override string ToString()

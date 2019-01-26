@@ -32,19 +32,33 @@ namespace TravelAgencySiteClient
             
             this.FillingDataComboBoxCountries();
 
-            this.tabControl.SelectedIndexChanged += TabControl_SelectedIndexChanged;
+            this.tabControl.SelectedIndexChanged 
+                += TabControl_SelectedIndexChanged;
             this.buttonSelectCountry.Click += ButtonSelectCountry_Click;
             this.buttonSelectCity.Click += ButtonSelectCity_Click;
-            this.dataGridViewTours.CellDoubleClick += DataGridViewTours_CellDoubleClick;
+            this.dataGridViewTours.CellDoubleClick 
+                += DataGridViewTours_CellDoubleClick;
         }
 
-        private void DataGridViewTours_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewTours_CellDoubleClick
+            (object sender, DataGridViewCellEventArgs e)
         {
             Console.WriteLine("Показываем страницу отеля");
             Console.WriteLine((sender as DataGridView).SelectedCells[1].Value);
         }
 
         private void ButtonSelectCity_Click(object sender, EventArgs e)
+        {
+            // Выбранная страна.
+            string country = comboBoxCountries.SelectedItem.ToString();
+            // Выбранный город.
+            string city = comboBoxCities.SelectedItem.ToString();
+
+            // Заполнение таблицы отелей.
+            this.FillingDataGridViewHotels(country, city);
+        }
+
+        private void FillingDataGridViewHotels(string country, string city)
         {
             // TODO:
 
@@ -60,7 +74,7 @@ namespace TravelAgencySiteClient
             // Выбранная страна.
             string country = comboBoxCountries.SelectedItem.ToString();
 
-            // Загрузка списка городов.
+            // Заполнение списка городов.
             this.FillingDataComboBoxCities(country);
         }
 
