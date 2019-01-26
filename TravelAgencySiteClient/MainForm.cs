@@ -58,14 +58,14 @@ namespace TravelAgencySiteClient
             this.FillingDataGridViewHotels(country, city);
         }
 
-        private void FillingDataGridViewHotels(string country, string city)
+        private async void FillingDataGridViewHotels(string country, string city)
         {
-            // TODO:
+            responseJson = await api.LoadHotelsDataAsync(country, city);
 
             Console.WriteLine(" > Загрузка отелей в таблицу.");
 
             this.dataGridViewTours.DataSource
-                = JsonConvert.DeserializeObject<List<City>>(responseJson)
+                = JsonConvert.DeserializeObject<List<Hotel>>(responseJson)
                 .ToList();
         }
 
@@ -86,7 +86,7 @@ namespace TravelAgencySiteClient
                 = JsonConvert.DeserializeObject<List<City>>(responseJson)
                 .Select(c => c.cityName).ToList();
 
-            // Включение комбобокса и кнопки для выбора города.
+            // Включение комбоБокса и кнопки для выбора города.
             this.comboBoxCities.Enabled = true;
             this.buttonSelectCity.Enabled = true;
         }
