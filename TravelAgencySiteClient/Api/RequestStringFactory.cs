@@ -51,5 +51,17 @@ namespace TravelAgencySiteClient
 
             return requestStr;
         }
+
+        internal string GenerateRegUser(string login, string pass, string email)
+        {
+            string requestStr =
+                "token=" + token +
+                "&param=" + QueryValue.regUser +
+                "&login=" + login +
+                "&pass=" + pass +
+                "&email=" + email;
+
+            return requestStr;
+        }
     }
 }

@@ -39,6 +39,47 @@ namespace TravelAgencySiteClient
             this.buttonSelectCity.Click += ButtonSelectCity_Click;
             this.dataGridViewTours.CellDoubleClick 
                 += DataGridViewTours_CellDoubleClick;
+
+            // Admin tab
+            this.buttonRegister.Click += ButtonRegister_Click;
+        }
+
+        private void ButtonRegister_Click(object sender, EventArgs e)
+        {
+            // TODO register new user
+            Console.WriteLine("> TODO register new user");
+            //
+
+            string login = textBoxLogin.Text;
+            string pass = textBoxPassword.Text;
+            string email = textBoxEmail.Text;
+
+            this.NewUserRegistration(login, pass, email);
+        }
+
+        private async void NewUserRegistration(string login, string pass, string email)
+        {
+            responseJson = await api.UserRegistrationAsync(login, pass, email);
+            
+            if (responseJson == "200")
+            {
+                MessageBox.Show(
+                    "Пользователь добавлен!",
+                    "Добавление успешно",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Пользователь не добавлен!",
+                    "Ошибка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+
+            // DEBUG
+            Console.WriteLine("Ответ при регистрации User: " + responseJson);
         }
 
         private void DataGridViewTours_CellDoubleClick

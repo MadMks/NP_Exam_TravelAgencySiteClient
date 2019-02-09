@@ -30,17 +30,25 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageTours = new System.Windows.Forms.TabPage();
+            this.dataGridViewTours = new System.Windows.Forms.DataGridView();
+            this.buttonSelectCity = new System.Windows.Forms.Button();
+            this.comboBoxCities = new System.Windows.Forms.ComboBox();
+            this.buttonSelectCountry = new System.Windows.Forms.Button();
+            this.comboBoxCountries = new System.Windows.Forms.ComboBox();
+            this.labelSelectTours = new System.Windows.Forms.Label();
             this.tabPageRegistration = new System.Windows.Forms.TabPage();
             this.tabPageAdminForm = new System.Windows.Forms.TabPage();
-            this.labelSelectTours = new System.Windows.Forms.Label();
-            this.comboBoxCountries = new System.Windows.Forms.ComboBox();
-            this.buttonSelectCountry = new System.Windows.Forms.Button();
-            this.comboBoxCities = new System.Windows.Forms.ComboBox();
-            this.buttonSelectCity = new System.Windows.Forms.Button();
-            this.dataGridViewTours = new System.Windows.Forms.DataGridView();
+            this.labelLogin = new System.Windows.Forms.Label();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.buttonRegister = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageTours.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).BeginInit();
+            this.tabPageRegistration.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -70,8 +78,72 @@
             this.tabPageTours.Text = "Туры";
             this.tabPageTours.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewTours
+            // 
+            this.dataGridViewTours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTours.Location = new System.Drawing.Point(13, 123);
+            this.dataGridViewTours.MultiSelect = false;
+            this.dataGridViewTours.Name = "dataGridViewTours";
+            this.dataGridViewTours.ReadOnly = true;
+            this.dataGridViewTours.RowTemplate.Height = 23;
+            this.dataGridViewTours.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewTours.Size = new System.Drawing.Size(544, 177);
+            this.dataGridViewTours.TabIndex = 5;
+            // 
+            // buttonSelectCity
+            // 
+            this.buttonSelectCity.Location = new System.Drawing.Point(153, 82);
+            this.buttonSelectCity.Name = "buttonSelectCity";
+            this.buttonSelectCity.Size = new System.Drawing.Size(105, 23);
+            this.buttonSelectCity.TabIndex = 4;
+            this.buttonSelectCity.Text = "Выбрать город";
+            this.buttonSelectCity.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxCities
+            // 
+            this.comboBoxCities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCities.FormattingEnabled = true;
+            this.comboBoxCities.Location = new System.Drawing.Point(10, 82);
+            this.comboBoxCities.Name = "comboBoxCities";
+            this.comboBoxCities.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCities.TabIndex = 3;
+            // 
+            // buttonSelectCountry
+            // 
+            this.buttonSelectCountry.Location = new System.Drawing.Point(153, 44);
+            this.buttonSelectCountry.Name = "buttonSelectCountry";
+            this.buttonSelectCountry.Size = new System.Drawing.Size(105, 23);
+            this.buttonSelectCountry.TabIndex = 2;
+            this.buttonSelectCountry.Text = "Выбрать страну";
+            this.buttonSelectCountry.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxCountries
+            // 
+            this.comboBoxCountries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCountries.FormattingEnabled = true;
+            this.comboBoxCountries.Location = new System.Drawing.Point(10, 44);
+            this.comboBoxCountries.Name = "comboBoxCountries";
+            this.comboBoxCountries.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCountries.TabIndex = 1;
+            // 
+            // labelSelectTours
+            // 
+            this.labelSelectTours.AutoSize = true;
+            this.labelSelectTours.Location = new System.Drawing.Point(7, 16);
+            this.labelSelectTours.Name = "labelSelectTours";
+            this.labelSelectTours.Size = new System.Drawing.Size(66, 13);
+            this.labelSelectTours.TabIndex = 0;
+            this.labelSelectTours.Text = "Выбор тура";
+            // 
             // tabPageRegistration
             // 
+            this.tabPageRegistration.Controls.Add(this.buttonRegister);
+            this.tabPageRegistration.Controls.Add(this.textBoxEmail);
+            this.tabPageRegistration.Controls.Add(this.labelEmail);
+            this.tabPageRegistration.Controls.Add(this.textBoxPassword);
+            this.tabPageRegistration.Controls.Add(this.labelPassword);
+            this.tabPageRegistration.Controls.Add(this.textBoxLogin);
+            this.tabPageRegistration.Controls.Add(this.labelLogin);
             this.tabPageRegistration.Location = new System.Drawing.Point(4, 22);
             this.tabPageRegistration.Name = "tabPageRegistration";
             this.tabPageRegistration.Padding = new System.Windows.Forms.Padding(3);
@@ -90,62 +162,62 @@
             this.tabPageAdminForm.Text = "Админ";
             this.tabPageAdminForm.UseVisualStyleBackColor = true;
             // 
-            // labelSelectTours
+            // labelLogin
             // 
-            this.labelSelectTours.AutoSize = true;
-            this.labelSelectTours.Location = new System.Drawing.Point(7, 16);
-            this.labelSelectTours.Name = "labelSelectTours";
-            this.labelSelectTours.Size = new System.Drawing.Size(66, 13);
-            this.labelSelectTours.TabIndex = 0;
-            this.labelSelectTours.Text = "Выбор тура";
+            this.labelLogin.AutoSize = true;
+            this.labelLogin.Location = new System.Drawing.Point(11, 16);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(41, 13);
+            this.labelLogin.TabIndex = 0;
+            this.labelLogin.Text = "Логин:";
             // 
-            // comboBoxCountries
+            // textBoxLogin
             // 
-            this.comboBoxCountries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCountries.FormattingEnabled = true;
-            this.comboBoxCountries.Location = new System.Drawing.Point(10, 44);
-            this.comboBoxCountries.Name = "comboBoxCountries";
-            this.comboBoxCountries.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCountries.TabIndex = 1;
+            this.textBoxLogin.Location = new System.Drawing.Point(63, 13);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(134, 21);
+            this.textBoxLogin.TabIndex = 1;
             // 
-            // buttonSelectCountry
+            // labelPassword
             // 
-            this.buttonSelectCountry.Location = new System.Drawing.Point(153, 44);
-            this.buttonSelectCountry.Name = "buttonSelectCountry";
-            this.buttonSelectCountry.Size = new System.Drawing.Size(105, 23);
-            this.buttonSelectCountry.TabIndex = 2;
-            this.buttonSelectCountry.Text = "Выбрать страну";
-            this.buttonSelectCountry.UseVisualStyleBackColor = true;
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(11, 48);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(48, 13);
+            this.labelPassword.TabIndex = 2;
+            this.labelPassword.Text = "Пароль:";
             // 
-            // comboBoxCities
+            // textBoxPassword
             // 
-            this.comboBoxCities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCities.FormattingEnabled = true;
-            this.comboBoxCities.Location = new System.Drawing.Point(10, 82);
-            this.comboBoxCities.Name = "comboBoxCities";
-            this.comboBoxCities.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCities.TabIndex = 3;
+            this.textBoxPassword.Location = new System.Drawing.Point(63, 44);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(134, 21);
+            this.textBoxPassword.TabIndex = 3;
             // 
-            // buttonSelectCity
+            // labelEmail
             // 
-            this.buttonSelectCity.Location = new System.Drawing.Point(153, 82);
-            this.buttonSelectCity.Name = "buttonSelectCity";
-            this.buttonSelectCity.Size = new System.Drawing.Size(105, 23);
-            this.buttonSelectCity.TabIndex = 4;
-            this.buttonSelectCity.Text = "Выбрать город";
-            this.buttonSelectCity.UseVisualStyleBackColor = true;
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(11, 79);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(35, 13);
+            this.labelEmail.TabIndex = 4;
+            this.labelEmail.Text = "Email:";
             // 
-            // dataGridViewTours
+            // textBoxEmail
             // 
-            this.dataGridViewTours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTours.Location = new System.Drawing.Point(13, 123);
-            this.dataGridViewTours.MultiSelect = false;
-            this.dataGridViewTours.Name = "dataGridViewTours";
-            this.dataGridViewTours.ReadOnly = true;
-            this.dataGridViewTours.RowTemplate.Height = 23;
-            this.dataGridViewTours.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewTours.Size = new System.Drawing.Size(544, 177);
-            this.dataGridViewTours.TabIndex = 5;
+            this.textBoxEmail.Location = new System.Drawing.Point(63, 76);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(134, 21);
+            this.textBoxEmail.TabIndex = 5;
+            // 
+            // buttonRegister
+            // 
+            this.buttonRegister.Location = new System.Drawing.Point(40, 117);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(124, 23);
+            this.buttonRegister.TabIndex = 6;
+            this.buttonRegister.Text = "Регистрация";
+            this.buttonRegister.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -159,6 +231,8 @@
             this.tabPageTours.ResumeLayout(false);
             this.tabPageTours.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).EndInit();
+            this.tabPageRegistration.ResumeLayout(false);
+            this.tabPageRegistration.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -175,6 +249,13 @@
         private System.Windows.Forms.ComboBox comboBoxCities;
         private System.Windows.Forms.Button buttonSelectCountry;
         private System.Windows.Forms.ComboBox comboBoxCountries;
+        private System.Windows.Forms.Button buttonRegister;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.Label labelLogin;
     }
 }
 

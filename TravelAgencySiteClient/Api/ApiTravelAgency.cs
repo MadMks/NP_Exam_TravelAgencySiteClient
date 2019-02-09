@@ -53,6 +53,18 @@ namespace TravelAgencySiteClient
             return responseJson;
         }
 
+        //
+        // Методы записи данных.
+        //
+
+        public async Task<string> UserRegistrationAsync(string login, string pass, string email)
+        {
+            string request = requestFactory.GenerateRegUser(login, pass, email);
+
+            string responseJson = await LoadDataAsync(request);
+
+            return responseJson;
+        }
 
         //
         // Загрузка данных.
@@ -91,5 +103,7 @@ namespace TravelAgencySiteClient
 
             return responseStr;
         }
+
+        
     }
 }
