@@ -63,5 +63,15 @@ namespace TravelAgencySiteClient
 
             return requestStr;
         }
+
+        internal string GenerateAddCountry(string obj)
+        {
+            string requestStr =
+                "token=" + token +
+                "&param=" + QueryValue.addCountry +
+                "&object=" + obj;
+
+            return requestStr;
+        }
     }
 }

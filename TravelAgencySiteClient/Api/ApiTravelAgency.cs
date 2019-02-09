@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -64,6 +65,15 @@ namespace TravelAgencySiteClient
             string responseJson = await LoadDataAsync(request);
 
             return responseJson;
+        }
+
+        public async Task<string> AddCountryAsync(string country)
+        {
+            string obj = JsonConvert.SerializeObject(new Country(country));
+
+            string request = requestFactory.GenerateAddCountry(obj);
+
+            return await LoadDataAsync(request);
         }
 
         //

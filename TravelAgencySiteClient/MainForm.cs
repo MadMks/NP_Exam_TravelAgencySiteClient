@@ -35,20 +35,37 @@ namespace TravelAgencySiteClient
 
             this.tabControl.SelectedIndexChanged 
                 += TabControl_SelectedIndexChanged;
+
+            // Tours tab
             this.buttonSelectCountry.Click += ButtonSelectCountry_Click;
             this.buttonSelectCity.Click += ButtonSelectCity_Click;
             this.dataGridViewTours.CellDoubleClick 
                 += DataGridViewTours_CellDoubleClick;
 
-            // Admin tab
+            // Register tab
             this.buttonRegister.Click += ButtonRegister_Click;
+
+            // Admin tab
+            this.buttonAdd.Click += ButtonAdd_Click;
+        }
+
+        private void ButtonAdd_Click(object sender, EventArgs e)
+        {
+            // TODO проверитть на заполненность текстбокса.
+            string country = textBoxAdding.Text;
+            this.AddNewCountry(country);
+        }
+
+        private async void AddNewCountry(string country)
+        {
+            responseJson = await api.AddCountryAsync(country);
+
+            Console.WriteLine("AddNewCountry: " + responseJson);
         }
 
         private void ButtonRegister_Click(object sender, EventArgs e)
         {
-            // TODO register new user
-            Console.WriteLine("> TODO register new user");
-            //
+            // TODO проверка на заполнение всех полей.
 
             string login = textBoxLogin.Text;
             string pass = textBoxPassword.Text;
@@ -71,6 +88,8 @@ namespace TravelAgencySiteClient
             }
             else
             {
+                // TODO не сервере не реализован возврат ошибки.
+
                 MessageBox.Show(
                     "Пользователь не добавлен!",
                     "Ошибка",
@@ -150,16 +169,22 @@ namespace TravelAgencySiteClient
             this.buttonSelectCountry.Enabled = true;
         }
 
-        private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
+        private async void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabControl.SelectedTab.Name == tabPageTours.Name)
             {
                 this.FillingDataComboBoxCountries();
             }
-            // Для вкаладки регистрация подгружать ничего не нужно.
+            // Для вкаладки регистрация ничего не подгружаем.
             else if (tabControl.SelectedTab.Name == tabPageAdminForm.Name)
             {
                 Console.WriteLine("TODO: loading admins data all table");
+
+                responseJson = await api.LoadCountriesDataAsync();
+
+                this.dataGridView1.DataSource
+                    = JsonConvert.DeserializeObject<List<Country>>(responseJson)
+                    .ToList();
             }
         }
     }

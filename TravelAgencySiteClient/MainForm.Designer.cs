@@ -45,10 +45,16 @@
             this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.buttonRegister = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonDel = new System.Windows.Forms.Button();
+            this.textBoxAdding = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tabPageTours.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).BeginInit();
             this.tabPageRegistration.SuspendLayout();
+            this.tabPageAdminForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -154,6 +160,10 @@
             // 
             // tabPageAdminForm
             // 
+            this.tabPageAdminForm.Controls.Add(this.textBoxAdding);
+            this.tabPageAdminForm.Controls.Add(this.buttonDel);
+            this.tabPageAdminForm.Controls.Add(this.buttonAdd);
+            this.tabPageAdminForm.Controls.Add(this.dataGridView1);
             this.tabPageAdminForm.Location = new System.Drawing.Point(4, 22);
             this.tabPageAdminForm.Name = "tabPageAdminForm";
             this.tabPageAdminForm.Padding = new System.Windows.Forms.Padding(3);
@@ -219,6 +229,40 @@
             this.buttonRegister.Text = "Регистрация";
             this.buttonRegister.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(25, 69);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(377, 150);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(25, 270);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.TabIndex = 1;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            // 
+            // buttonDel
+            // 
+            this.buttonDel.Location = new System.Drawing.Point(327, 270);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Size = new System.Drawing.Size(75, 23);
+            this.buttonDel.TabIndex = 2;
+            this.buttonDel.Text = "Удалить";
+            this.buttonDel.UseVisualStyleBackColor = true;
+            // 
+            // textBoxAdding
+            // 
+            this.textBoxAdding.Location = new System.Drawing.Point(25, 237);
+            this.textBoxAdding.Name = "textBoxAdding";
+            this.textBoxAdding.Size = new System.Drawing.Size(219, 21);
+            this.textBoxAdding.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,6 +277,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).EndInit();
             this.tabPageRegistration.ResumeLayout(false);
             this.tabPageRegistration.PerformLayout();
+            this.tabPageAdminForm.ResumeLayout(false);
+            this.tabPageAdminForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -256,6 +303,10 @@
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.Label labelLogin;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonDel;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.TextBox textBoxAdding;
     }
 }
 
