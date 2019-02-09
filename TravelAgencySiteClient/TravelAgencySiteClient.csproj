@@ -56,7 +56,6 @@
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\Hotel.cs" />
-    <Compile Include="Entities\User.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
