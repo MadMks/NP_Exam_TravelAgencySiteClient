@@ -71,6 +71,9 @@
             this.labelHotelCost = new System.Windows.Forms.Label();
             this.labelHotelStars = new System.Windows.Forms.Label();
             this.numericUpDownHotelStars = new System.Windows.Forms.NumericUpDown();
+            this.labelCountryName = new System.Windows.Forms.Label();
+            this.labelCountry = new System.Windows.Forms.Label();
+            this.labelCityName = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageTours.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).BeginInit();
@@ -108,7 +111,7 @@
             this.tabPageTours.Location = new System.Drawing.Point(4, 22);
             this.tabPageTours.Name = "tabPageTours";
             this.tabPageTours.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTours.Size = new System.Drawing.Size(570, 314);
+            this.tabPageTours.Size = new System.Drawing.Size(570, 390);
             this.tabPageTours.TabIndex = 0;
             this.tabPageTours.Text = "Туры";
             this.tabPageTours.UseVisualStyleBackColor = true;
@@ -122,7 +125,7 @@
             this.dataGridViewTours.ReadOnly = true;
             this.dataGridViewTours.RowTemplate.Height = 23;
             this.dataGridViewTours.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewTours.Size = new System.Drawing.Size(544, 177);
+            this.dataGridViewTours.Size = new System.Drawing.Size(544, 250);
             this.dataGridViewTours.TabIndex = 5;
             // 
             // buttonSelectCity
@@ -182,7 +185,7 @@
             this.tabPageRegistration.Location = new System.Drawing.Point(4, 22);
             this.tabPageRegistration.Name = "tabPageRegistration";
             this.tabPageRegistration.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRegistration.Size = new System.Drawing.Size(570, 314);
+            this.tabPageRegistration.Size = new System.Drawing.Size(570, 390);
             this.tabPageRegistration.TabIndex = 1;
             this.tabPageRegistration.Text = "Регистрация";
             this.tabPageRegistration.UseVisualStyleBackColor = true;
@@ -269,6 +272,7 @@
             // 
             // tabPageCountries
             // 
+            this.tabPageCountries.Controls.Add(this.labelCountryName);
             this.tabPageCountries.Controls.Add(this.dataGridViewCountries);
             this.tabPageCountries.Controls.Add(this.buttonDelCountry);
             this.tabPageCountries.Controls.Add(this.textBoxAddCountry);
@@ -276,7 +280,7 @@
             this.tabPageCountries.Location = new System.Drawing.Point(4, 22);
             this.tabPageCountries.Name = "tabPageCountries";
             this.tabPageCountries.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCountries.Size = new System.Drawing.Size(549, 265);
+            this.tabPageCountries.Size = new System.Drawing.Size(549, 341);
             this.tabPageCountries.TabIndex = 0;
             this.tabPageCountries.Text = "Страны";
             this.tabPageCountries.UseVisualStyleBackColor = true;
@@ -284,18 +288,18 @@
             // dataGridViewCountries
             // 
             this.dataGridViewCountries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCountries.Location = new System.Drawing.Point(6, 8);
+            this.dataGridViewCountries.Location = new System.Drawing.Point(6, 13);
             this.dataGridViewCountries.MultiSelect = false;
             this.dataGridViewCountries.Name = "dataGridViewCountries";
             this.dataGridViewCountries.ReadOnly = true;
             this.dataGridViewCountries.RowTemplate.Height = 23;
             this.dataGridViewCountries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCountries.Size = new System.Drawing.Size(537, 178);
+            this.dataGridViewCountries.Size = new System.Drawing.Size(537, 278);
             this.dataGridViewCountries.TabIndex = 0;
             // 
             // buttonDelCountry
             // 
-            this.buttonDelCountry.Location = new System.Drawing.Point(458, 229);
+            this.buttonDelCountry.Location = new System.Drawing.Point(468, 303);
             this.buttonDelCountry.Name = "buttonDelCountry";
             this.buttonDelCountry.Size = new System.Drawing.Size(75, 23);
             this.buttonDelCountry.TabIndex = 2;
@@ -304,14 +308,14 @@
             // 
             // textBoxAddCountry
             // 
-            this.textBoxAddCountry.Location = new System.Drawing.Point(14, 202);
+            this.textBoxAddCountry.Location = new System.Drawing.Point(113, 305);
             this.textBoxAddCountry.Name = "textBoxAddCountry";
             this.textBoxAddCountry.Size = new System.Drawing.Size(219, 21);
             this.textBoxAddCountry.TabIndex = 3;
             // 
             // buttonAddCountry
             // 
-            this.buttonAddCountry.Location = new System.Drawing.Point(14, 229);
+            this.buttonAddCountry.Location = new System.Drawing.Point(338, 305);
             this.buttonAddCountry.Name = "buttonAddCountry";
             this.buttonAddCountry.Size = new System.Drawing.Size(75, 23);
             this.buttonAddCountry.TabIndex = 1;
@@ -320,6 +324,8 @@
             // 
             // tabPageCities
             // 
+            this.tabPageCities.Controls.Add(this.labelCityName);
+            this.tabPageCities.Controls.Add(this.labelCountry);
             this.tabPageCities.Controls.Add(this.comboBoxCountriesForAddCity);
             this.tabPageCities.Controls.Add(this.dataGridViewCities);
             this.tabPageCities.Controls.Add(this.buttonDelCity);
@@ -328,7 +334,7 @@
             this.tabPageCities.Location = new System.Drawing.Point(4, 22);
             this.tabPageCities.Name = "tabPageCities";
             this.tabPageCities.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCities.Size = new System.Drawing.Size(549, 265);
+            this.tabPageCities.Size = new System.Drawing.Size(549, 341);
             this.tabPageCities.TabIndex = 1;
             this.tabPageCities.Text = "Города";
             this.tabPageCities.UseVisualStyleBackColor = true;
@@ -337,26 +343,26 @@
             // 
             this.comboBoxCountriesForAddCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCountriesForAddCity.FormattingEnabled = true;
-            this.comboBoxCountriesForAddCity.Location = new System.Drawing.Point(301, 204);
+            this.comboBoxCountriesForAddCity.Location = new System.Drawing.Point(111, 277);
             this.comboBoxCountriesForAddCity.Name = "comboBoxCountriesForAddCity";
-            this.comboBoxCountriesForAddCity.Size = new System.Drawing.Size(202, 21);
+            this.comboBoxCountriesForAddCity.Size = new System.Drawing.Size(219, 21);
             this.comboBoxCountriesForAddCity.TabIndex = 8;
             // 
             // dataGridViewCities
             // 
             this.dataGridViewCities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCities.Location = new System.Drawing.Point(6, 10);
+            this.dataGridViewCities.Location = new System.Drawing.Point(6, 13);
             this.dataGridViewCities.MultiSelect = false;
             this.dataGridViewCities.Name = "dataGridViewCities";
             this.dataGridViewCities.ReadOnly = true;
             this.dataGridViewCities.RowTemplate.Height = 23;
             this.dataGridViewCities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCities.Size = new System.Drawing.Size(537, 178);
+            this.dataGridViewCities.Size = new System.Drawing.Size(537, 247);
             this.dataGridViewCities.TabIndex = 4;
             // 
             // buttonDelCity
             // 
-            this.buttonDelCity.Location = new System.Drawing.Point(458, 231);
+            this.buttonDelCity.Location = new System.Drawing.Point(468, 275);
             this.buttonDelCity.Name = "buttonDelCity";
             this.buttonDelCity.Size = new System.Drawing.Size(75, 23);
             this.buttonDelCity.TabIndex = 6;
@@ -365,14 +371,14 @@
             // 
             // textBoxAddCity
             // 
-            this.textBoxAddCity.Location = new System.Drawing.Point(14, 204);
+            this.textBoxAddCity.Location = new System.Drawing.Point(111, 309);
             this.textBoxAddCity.Name = "textBoxAddCity";
             this.textBoxAddCity.Size = new System.Drawing.Size(219, 21);
             this.textBoxAddCity.TabIndex = 7;
             // 
             // buttonAddCity
             // 
-            this.buttonAddCity.Location = new System.Drawing.Point(14, 231);
+            this.buttonAddCity.Location = new System.Drawing.Point(346, 307);
             this.buttonAddCity.Name = "buttonAddCity";
             this.buttonAddCity.Size = new System.Drawing.Size(75, 23);
             this.buttonAddCity.TabIndex = 5;
@@ -531,6 +537,33 @@
             0,
             0});
             // 
+            // labelCountryName
+            // 
+            this.labelCountryName.AutoSize = true;
+            this.labelCountryName.Location = new System.Drawing.Point(8, 308);
+            this.labelCountryName.Name = "labelCountryName";
+            this.labelCountryName.Size = new System.Drawing.Size(99, 13);
+            this.labelCountryName.TabIndex = 4;
+            this.labelCountryName.Text = "Название страны:";
+            // 
+            // labelCountry
+            // 
+            this.labelCountry.AutoSize = true;
+            this.labelCountry.Location = new System.Drawing.Point(7, 280);
+            this.labelCountry.Name = "labelCountry";
+            this.labelCountry.Size = new System.Drawing.Size(48, 13);
+            this.labelCountry.TabIndex = 9;
+            this.labelCountry.Text = "Страна:";
+            // 
+            // labelCityName
+            // 
+            this.labelCityName.AutoSize = true;
+            this.labelCityName.Location = new System.Drawing.Point(7, 312);
+            this.labelCityName.Name = "labelCityName";
+            this.labelCityName.Size = new System.Drawing.Size(98, 13);
+            this.labelCityName.TabIndex = 10;
+            this.labelCityName.Text = "Название города:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,6 +639,9 @@
         private System.Windows.Forms.Button buttonDelHotel;
         private System.Windows.Forms.TextBox textBoxHotelCost;
         private System.Windows.Forms.Button buttonAddHotel;
+        private System.Windows.Forms.Label labelCountryName;
+        private System.Windows.Forms.Label labelCityName;
+        private System.Windows.Forms.Label labelCountry;
     }
 }
 
