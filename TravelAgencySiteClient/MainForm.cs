@@ -53,8 +53,12 @@ namespace TravelAgencySiteClient
                 += TabControlAdmin_SelectedIndexChanged;
             // Country tab
             this.buttonAddCountry.Click += ButtonAddCountry_Click;
+            // City tab
+            this.buttonAddCity.Click += ButtonAddCity_Click;
             
         }
+
+        
 
         private async void TabControlAdmin_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -140,14 +144,36 @@ namespace TravelAgencySiteClient
 
             this.textBoxAddCountry.Text = "";
 
+            // TODO убрать? так как обновить может перед добавлением.
             await LoadAllCountriesForAdminTab();
         }
+
+        private async void ButtonAddCity_Click(object sender, EventArgs e)
+        {
+            // TODO проверитть на заполненность текстбокса.
+            string country = this.comboBoxCountriesForAddCity.SelectedItem as string;
+            string city = this.textBoxAddCity.Text;
+            this.AddNewCity(country, city);
+
+            this.textBoxAddCity.Text = "";
+
+            // TODO убрать? так как обновить может перед добавлением.
+            await LoadAllCitiesForAdminTab();
+        }
+
 
         private async void AddNewCountry(string country)
         {
             responseJson = await api.AddCountryAsync(country);
 
             Console.WriteLine("AddNewCountry: " + responseJson);
+        }
+
+        private async void AddNewCity(string country, string city)
+        {
+            responseJson = await api.AddCityAsync(country, city);
+
+            Console.WriteLine("AddNewCity: " + responseJson);
         }
 
         private void ButtonRegister_Click(object sender, EventArgs e)

@@ -11,5 +11,11 @@ namespace TravelAgencySiteClient
         public int id { get; set; }
         public string cityName { get; set; }
         public string countryName { get; set; }
+
+        public City(string country, string city)
+        {
+            countryName = country;
+            cityName = city;
+        }
     }
 }

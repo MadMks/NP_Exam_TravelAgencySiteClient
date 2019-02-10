@@ -100,5 +100,15 @@ namespace TravelAgencySiteClient
 
             return requestStr;
         }
+
+        public string GenerateAddCity(string obj)
+        {
+            string requestStr =
+                "token=" + token +
+                "&param=" + QueryValue.addCity +
+                "&object=" + obj;
+
+            return requestStr;
+        }
     }
 }

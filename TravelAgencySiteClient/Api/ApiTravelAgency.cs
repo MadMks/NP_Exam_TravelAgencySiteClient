@@ -79,10 +79,6 @@ namespace TravelAgencySiteClient
             return await LoadDataAsync(request);
         }
 
-        //public async Task<string> LoadCityAndCountryAsync()
-        //{
-        //    //string request = requestFactory.Generate
-        //}
 
         //
         // Методы записи данных.
@@ -102,6 +98,15 @@ namespace TravelAgencySiteClient
             string obj = JsonConvert.SerializeObject(new Country(country));
 
             string request = requestFactory.GenerateAddCountry(obj);
+
+            return await LoadDataAsync(request);
+        }
+
+        public async Task<string> AddCityAsync(string country, string city)
+        {
+            string obj = JsonConvert.SerializeObject(new City(country, city));
+
+            string request = requestFactory.GenerateAddCity(obj);
 
             return await LoadDataAsync(request);
         }
