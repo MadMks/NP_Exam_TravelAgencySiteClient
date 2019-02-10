@@ -79,6 +79,11 @@ namespace TravelAgencySiteClient
             return await LoadDataAsync(request);
         }
 
+        //public async Task<string> LoadCityAndCountryAsync()
+        //{
+        //    //string request = requestFactory.Generate
+        //}
+
         //
         // Методы записи данных.
         //

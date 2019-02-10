@@ -78,7 +78,7 @@ namespace TravelAgencySiteClient
 
                 await FillingDataGridAllHotelsForAdminTab();
 
-                // TODO заполнение комбобоксов
+                await FillingDataComboBoxCityAndCountry();
             }
             else if (tabControlAdmin.SelectedTab.Name == tabPageImages.Name)
             {
@@ -88,6 +88,16 @@ namespace TravelAgencySiteClient
 
                 // TODO заполнение комбобоксов
             }
+        }
+
+        private async Task FillingDataComboBoxCityAndCountry()
+        {
+            responseJson = await api.LoadAllCitiesDataAsync();
+
+            this.comboBoxHotelCityAndCountry.DataSource
+                = JsonConvert.DeserializeObject<List<City>>(responseJson)
+                .Select(c => c.cityName + " : " + c.countryName).Distinct()
+                .ToList<string>();
         }
 
         private async Task FillingDataGridAllHotelsForAdminTab()
