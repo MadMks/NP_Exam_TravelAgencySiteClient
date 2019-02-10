@@ -45,6 +45,15 @@ namespace TravelAgencySiteClient
             return responseJson;
         }
 
+        public async Task<string> LoadAllCitiesDataAsync()
+        {
+            string request = requestFactory.GenerateAllCities();
+
+            string responseJson = await LoadDataAsync(request);
+
+            return responseJson;
+        }
+
         public async Task<string> LoadHotelsDataAsync(string country, string city)
         {
             string request = requestFactory.GenerateHotels(country, city);

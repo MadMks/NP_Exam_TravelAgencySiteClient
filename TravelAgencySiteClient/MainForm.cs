@@ -49,10 +49,11 @@ namespace TravelAgencySiteClient
 
 
             // Admin tabs
-            this.buttonAdd.Click += ButtonAdd_Click;
-            // Country tab
             this.tabControlAdmin.SelectedIndexChanged
                 += TabControlAdmin_SelectedIndexChanged;
+            // Country tab
+            this.buttonAddCountry.Click += ButtonAddCountry_Click;
+            
         }
 
         private async void TabControlAdmin_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,24 +61,34 @@ namespace TravelAgencySiteClient
             if (tabControlAdmin.SelectedTab.Name == tabPageCountries.Name)
             {
                 Console.WriteLine(">> Загрузка стран");
-                // Загрузка стран
-                responseJson = await api.LoadCountriesDataAsync();
 
-                this.dataGridViewCountries.DataSource
-                    = JsonConvert.DeserializeObject<List<Country>>(responseJson)
-                    .ToList();
+                await LoadCountriesForAdminTab();
             }
             else if (tabControlAdmin.SelectedTab.Name == tabPageCities.Name)
             {
                 Console.WriteLine(">> Загрузка городов");
+
+                await LoadAllCitiesForAdminTab();
             }
         }
 
-        private void ButtonAdd_Click(object sender, EventArgs e)
+        private async Task LoadAllCitiesForAdminTab()
+        {
+            // Загрузка всех городов
+            responseJson = await api.LoadAllCitiesDataAsync();
+
+            this.dataGridViewCities.DataSource
+                = JsonConvert.DeserializeObject<List<City>>(responseJson)
+                .ToList();
+        }
+
+        private void ButtonAddCountry_Click(object sender, EventArgs e)
         {
             // TODO проверитть на заполненность текстбокса.
-            string country = textBoxAdding.Text;
+            string country = textBoxAddCountry.Text;
             this.AddNewCountry(country);
+
+            this.textBoxAddCountry.Text = "";
         }
 
         private async void AddNewCountry(string country)
@@ -203,14 +214,18 @@ namespace TravelAgencySiteClient
             else if (tabControl.SelectedTab.Name == tabPageAdminForm.Name)
             {
                 Console.WriteLine("TODO: loading admins data all table");
-
-                // Загрузка стран
-                responseJson = await api.LoadCountriesDataAsync();
-
-                this.dataGridViewCountries.DataSource
-                    = JsonConvert.DeserializeObject<List<Country>>(responseJson)
-                    .ToList();
+                await LoadCountriesForAdminTab();
             }
+        }
+
+        private async Task LoadCountriesForAdminTab()
+        {
+            // Загрузка стран
+            responseJson = await api.LoadCountriesDataAsync();
+
+            this.dataGridViewCountries.DataSource
+                = JsonConvert.DeserializeObject<List<Country>>(responseJson)
+                .ToList();
         }
     }
 }
