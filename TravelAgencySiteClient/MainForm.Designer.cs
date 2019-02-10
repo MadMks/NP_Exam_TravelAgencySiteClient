@@ -47,33 +47,33 @@
             this.tabPageAdminForm = new System.Windows.Forms.TabPage();
             this.tabControlAdmin = new System.Windows.Forms.TabControl();
             this.tabPageCountries = new System.Windows.Forms.TabPage();
+            this.labelCountryName = new System.Windows.Forms.Label();
             this.dataGridViewCountries = new System.Windows.Forms.DataGridView();
             this.buttonDelCountry = new System.Windows.Forms.Button();
             this.textBoxAddCountry = new System.Windows.Forms.TextBox();
             this.buttonAddCountry = new System.Windows.Forms.Button();
             this.tabPageCities = new System.Windows.Forms.TabPage();
+            this.labelCityName = new System.Windows.Forms.Label();
+            this.labelCountry = new System.Windows.Forms.Label();
             this.comboBoxCountriesForAddCity = new System.Windows.Forms.ComboBox();
             this.dataGridViewCities = new System.Windows.Forms.DataGridView();
             this.buttonDelCity = new System.Windows.Forms.Button();
             this.textBoxAddCity = new System.Windows.Forms.TextBox();
             this.buttonAddCity = new System.Windows.Forms.Button();
             this.tabPageHotels = new System.Windows.Forms.TabPage();
-            this.tabPageImages = new System.Windows.Forms.TabPage();
+            this.numericUpDownHotelStars = new System.Windows.Forms.NumericUpDown();
+            this.labelHotelStars = new System.Windows.Forms.Label();
+            this.labelHotelCost = new System.Windows.Forms.Label();
+            this.labelHotelName = new System.Windows.Forms.Label();
+            this.labelHotelDesc = new System.Windows.Forms.Label();
+            this.textBoxHotelDesc = new System.Windows.Forms.TextBox();
+            this.textBoxHotelName = new System.Windows.Forms.TextBox();
             this.comboBoxHotelCityAndCountry = new System.Windows.Forms.ComboBox();
             this.dataGridViewHotels = new System.Windows.Forms.DataGridView();
             this.buttonDelHotel = new System.Windows.Forms.Button();
             this.textBoxHotelCost = new System.Windows.Forms.TextBox();
             this.buttonAddHotel = new System.Windows.Forms.Button();
-            this.textBoxHotelName = new System.Windows.Forms.TextBox();
-            this.textBoxHotelDesc = new System.Windows.Forms.TextBox();
-            this.labelHotelDesc = new System.Windows.Forms.Label();
-            this.labelHotelName = new System.Windows.Forms.Label();
-            this.labelHotelCost = new System.Windows.Forms.Label();
-            this.labelHotelStars = new System.Windows.Forms.Label();
-            this.numericUpDownHotelStars = new System.Windows.Forms.NumericUpDown();
-            this.labelCountryName = new System.Windows.Forms.Label();
-            this.labelCountry = new System.Windows.Forms.Label();
-            this.labelCityName = new System.Windows.Forms.Label();
+            this.tabPageImages = new System.Windows.Forms.TabPage();
             this.tabControl.SuspendLayout();
             this.tabPageTours.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).BeginInit();
@@ -85,8 +85,8 @@
             this.tabPageCities.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCities)).BeginInit();
             this.tabPageHotels.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotels)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHotelStars)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotels)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -285,6 +285,15 @@
             this.tabPageCountries.Text = "Страны";
             this.tabPageCountries.UseVisualStyleBackColor = true;
             // 
+            // labelCountryName
+            // 
+            this.labelCountryName.AutoSize = true;
+            this.labelCountryName.Location = new System.Drawing.Point(8, 308);
+            this.labelCountryName.Name = "labelCountryName";
+            this.labelCountryName.Size = new System.Drawing.Size(99, 13);
+            this.labelCountryName.TabIndex = 4;
+            this.labelCountryName.Text = "Название страны:";
+            // 
             // dataGridViewCountries
             // 
             this.dataGridViewCountries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -338,6 +347,24 @@
             this.tabPageCities.TabIndex = 1;
             this.tabPageCities.Text = "Города";
             this.tabPageCities.UseVisualStyleBackColor = true;
+            // 
+            // labelCityName
+            // 
+            this.labelCityName.AutoSize = true;
+            this.labelCityName.Location = new System.Drawing.Point(7, 312);
+            this.labelCityName.Name = "labelCityName";
+            this.labelCityName.Size = new System.Drawing.Size(98, 13);
+            this.labelCityName.TabIndex = 10;
+            this.labelCityName.Text = "Название города:";
+            // 
+            // labelCountry
+            // 
+            this.labelCountry.AutoSize = true;
+            this.labelCountry.Location = new System.Drawing.Point(7, 280);
+            this.labelCountry.Name = "labelCountry";
+            this.labelCountry.Size = new System.Drawing.Size(48, 13);
+            this.labelCountry.TabIndex = 9;
+            this.labelCountry.Text = "Страна:";
             // 
             // comboBoxCountriesForAddCity
             // 
@@ -407,116 +434,9 @@
             this.tabPageHotels.Text = "Отели";
             this.tabPageHotels.UseVisualStyleBackColor = true;
             // 
-            // tabPageImages
-            // 
-            this.tabPageImages.Location = new System.Drawing.Point(4, 22);
-            this.tabPageImages.Name = "tabPageImages";
-            this.tabPageImages.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageImages.Size = new System.Drawing.Size(549, 265);
-            this.tabPageImages.TabIndex = 3;
-            this.tabPageImages.Text = "Картинки";
-            this.tabPageImages.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxHotelCityAndCountry
-            // 
-            this.comboBoxHotelCityAndCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxHotelCityAndCountry.FormattingEnabled = true;
-            this.comboBoxHotelCityAndCountry.Location = new System.Drawing.Point(7, 166);
-            this.comboBoxHotelCityAndCountry.Name = "comboBoxHotelCityAndCountry";
-            this.comboBoxHotelCityAndCountry.Size = new System.Drawing.Size(289, 21);
-            this.comboBoxHotelCityAndCountry.TabIndex = 13;
-            // 
-            // dataGridViewHotels
-            // 
-            this.dataGridViewHotels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHotels.Location = new System.Drawing.Point(6, 10);
-            this.dataGridViewHotels.MultiSelect = false;
-            this.dataGridViewHotels.Name = "dataGridViewHotels";
-            this.dataGridViewHotels.ReadOnly = true;
-            this.dataGridViewHotels.RowTemplate.Height = 23;
-            this.dataGridViewHotels.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewHotels.Size = new System.Drawing.Size(537, 138);
-            this.dataGridViewHotels.TabIndex = 9;
-            // 
-            // buttonDelHotel
-            // 
-            this.buttonDelHotel.Location = new System.Drawing.Point(468, 164);
-            this.buttonDelHotel.Name = "buttonDelHotel";
-            this.buttonDelHotel.Size = new System.Drawing.Size(75, 23);
-            this.buttonDelHotel.TabIndex = 11;
-            this.buttonDelHotel.Text = "Удалить";
-            this.buttonDelHotel.UseVisualStyleBackColor = true;
-            // 
-            // textBoxHotelCost
-            // 
-            this.textBoxHotelCost.Location = new System.Drawing.Point(280, 223);
-            this.textBoxHotelCost.Name = "textBoxHotelCost";
-            this.textBoxHotelCost.Size = new System.Drawing.Size(75, 21);
-            this.textBoxHotelCost.TabIndex = 12;
-            // 
-            // buttonAddHotel
-            // 
-            this.buttonAddHotel.Location = new System.Drawing.Point(468, 276);
-            this.buttonAddHotel.Name = "buttonAddHotel";
-            this.buttonAddHotel.Size = new System.Drawing.Size(75, 52);
-            this.buttonAddHotel.TabIndex = 10;
-            this.buttonAddHotel.Text = "Добавить";
-            this.buttonAddHotel.UseVisualStyleBackColor = true;
-            // 
-            // textBoxHotelName
-            // 
-            this.textBoxHotelName.Location = new System.Drawing.Point(9, 223);
-            this.textBoxHotelName.Name = "textBoxHotelName";
-            this.textBoxHotelName.Size = new System.Drawing.Size(219, 21);
-            this.textBoxHotelName.TabIndex = 14;
-            // 
-            // textBoxHotelDesc
-            // 
-            this.textBoxHotelDesc.Location = new System.Drawing.Point(7, 276);
-            this.textBoxHotelDesc.Multiline = true;
-            this.textBoxHotelDesc.Name = "textBoxHotelDesc";
-            this.textBoxHotelDesc.Size = new System.Drawing.Size(435, 52);
-            this.textBoxHotelDesc.TabIndex = 16;
-            // 
-            // labelHotelDesc
-            // 
-            this.labelHotelDesc.AutoSize = true;
-            this.labelHotelDesc.Location = new System.Drawing.Point(6, 254);
-            this.labelHotelDesc.Name = "labelHotelDesc";
-            this.labelHotelDesc.Size = new System.Drawing.Size(60, 13);
-            this.labelHotelDesc.TabIndex = 17;
-            this.labelHotelDesc.Text = "Описание:";
-            // 
-            // labelHotelName
-            // 
-            this.labelHotelName.AutoSize = true;
-            this.labelHotelName.Location = new System.Drawing.Point(6, 200);
-            this.labelHotelName.Name = "labelHotelName";
-            this.labelHotelName.Size = new System.Drawing.Size(92, 13);
-            this.labelHotelName.TabIndex = 18;
-            this.labelHotelName.Text = "Название отеля:";
-            // 
-            // labelHotelCost
-            // 
-            this.labelHotelCost.AutoSize = true;
-            this.labelHotelCost.Location = new System.Drawing.Point(277, 200);
-            this.labelHotelCost.Name = "labelHotelCost";
-            this.labelHotelCost.Size = new System.Drawing.Size(37, 13);
-            this.labelHotelCost.TabIndex = 19;
-            this.labelHotelCost.Text = "Цена:";
-            // 
-            // labelHotelStars
-            // 
-            this.labelHotelStars.AutoSize = true;
-            this.labelHotelStars.Location = new System.Drawing.Point(432, 200);
-            this.labelHotelStars.Name = "labelHotelStars";
-            this.labelHotelStars.Size = new System.Drawing.Size(78, 13);
-            this.labelHotelStars.TabIndex = 20;
-            this.labelHotelStars.Text = "Кол-во звезд:";
-            // 
             // numericUpDownHotelStars
             // 
-            this.numericUpDownHotelStars.Location = new System.Drawing.Point(435, 223);
+            this.numericUpDownHotelStars.Location = new System.Drawing.Point(435, 231);
             this.numericUpDownHotelStars.Maximum = new decimal(new int[] {
             5,
             0,
@@ -537,32 +457,112 @@
             0,
             0});
             // 
-            // labelCountryName
+            // labelHotelStars
             // 
-            this.labelCountryName.AutoSize = true;
-            this.labelCountryName.Location = new System.Drawing.Point(8, 308);
-            this.labelCountryName.Name = "labelCountryName";
-            this.labelCountryName.Size = new System.Drawing.Size(99, 13);
-            this.labelCountryName.TabIndex = 4;
-            this.labelCountryName.Text = "Название страны:";
+            this.labelHotelStars.AutoSize = true;
+            this.labelHotelStars.Location = new System.Drawing.Point(432, 212);
+            this.labelHotelStars.Name = "labelHotelStars";
+            this.labelHotelStars.Size = new System.Drawing.Size(78, 13);
+            this.labelHotelStars.TabIndex = 20;
+            this.labelHotelStars.Text = "Кол-во звезд:";
             // 
-            // labelCountry
+            // labelHotelCost
             // 
-            this.labelCountry.AutoSize = true;
-            this.labelCountry.Location = new System.Drawing.Point(7, 280);
-            this.labelCountry.Name = "labelCountry";
-            this.labelCountry.Size = new System.Drawing.Size(48, 13);
-            this.labelCountry.TabIndex = 9;
-            this.labelCountry.Text = "Страна:";
+            this.labelHotelCost.AutoSize = true;
+            this.labelHotelCost.Location = new System.Drawing.Point(277, 212);
+            this.labelHotelCost.Name = "labelHotelCost";
+            this.labelHotelCost.Size = new System.Drawing.Size(37, 13);
+            this.labelHotelCost.TabIndex = 19;
+            this.labelHotelCost.Text = "Цена:";
             // 
-            // labelCityName
+            // labelHotelName
             // 
-            this.labelCityName.AutoSize = true;
-            this.labelCityName.Location = new System.Drawing.Point(7, 312);
-            this.labelCityName.Name = "labelCityName";
-            this.labelCityName.Size = new System.Drawing.Size(98, 13);
-            this.labelCityName.TabIndex = 10;
-            this.labelCityName.Text = "Название города:";
+            this.labelHotelName.AutoSize = true;
+            this.labelHotelName.Location = new System.Drawing.Point(6, 212);
+            this.labelHotelName.Name = "labelHotelName";
+            this.labelHotelName.Size = new System.Drawing.Size(92, 13);
+            this.labelHotelName.TabIndex = 18;
+            this.labelHotelName.Text = "Название отеля:";
+            // 
+            // labelHotelDesc
+            // 
+            this.labelHotelDesc.AutoSize = true;
+            this.labelHotelDesc.Location = new System.Drawing.Point(6, 259);
+            this.labelHotelDesc.Name = "labelHotelDesc";
+            this.labelHotelDesc.Size = new System.Drawing.Size(60, 13);
+            this.labelHotelDesc.TabIndex = 17;
+            this.labelHotelDesc.Text = "Описание:";
+            // 
+            // textBoxHotelDesc
+            // 
+            this.textBoxHotelDesc.Location = new System.Drawing.Point(7, 276);
+            this.textBoxHotelDesc.Multiline = true;
+            this.textBoxHotelDesc.Name = "textBoxHotelDesc";
+            this.textBoxHotelDesc.Size = new System.Drawing.Size(435, 52);
+            this.textBoxHotelDesc.TabIndex = 16;
+            // 
+            // textBoxHotelName
+            // 
+            this.textBoxHotelName.Location = new System.Drawing.Point(9, 231);
+            this.textBoxHotelName.Name = "textBoxHotelName";
+            this.textBoxHotelName.Size = new System.Drawing.Size(219, 21);
+            this.textBoxHotelName.TabIndex = 14;
+            // 
+            // comboBoxHotelCityAndCountry
+            // 
+            this.comboBoxHotelCityAndCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxHotelCityAndCountry.FormattingEnabled = true;
+            this.comboBoxHotelCityAndCountry.Location = new System.Drawing.Point(7, 180);
+            this.comboBoxHotelCityAndCountry.Name = "comboBoxHotelCityAndCountry";
+            this.comboBoxHotelCityAndCountry.Size = new System.Drawing.Size(289, 21);
+            this.comboBoxHotelCityAndCountry.TabIndex = 13;
+            // 
+            // dataGridViewHotels
+            // 
+            this.dataGridViewHotels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHotels.Location = new System.Drawing.Point(6, 13);
+            this.dataGridViewHotels.MultiSelect = false;
+            this.dataGridViewHotels.Name = "dataGridViewHotels";
+            this.dataGridViewHotels.ReadOnly = true;
+            this.dataGridViewHotels.RowTemplate.Height = 23;
+            this.dataGridViewHotels.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewHotels.Size = new System.Drawing.Size(537, 150);
+            this.dataGridViewHotels.TabIndex = 9;
+            // 
+            // buttonDelHotel
+            // 
+            this.buttonDelHotel.Location = new System.Drawing.Point(468, 178);
+            this.buttonDelHotel.Name = "buttonDelHotel";
+            this.buttonDelHotel.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelHotel.TabIndex = 11;
+            this.buttonDelHotel.Text = "Удалить";
+            this.buttonDelHotel.UseVisualStyleBackColor = true;
+            // 
+            // textBoxHotelCost
+            // 
+            this.textBoxHotelCost.Location = new System.Drawing.Point(280, 231);
+            this.textBoxHotelCost.Name = "textBoxHotelCost";
+            this.textBoxHotelCost.Size = new System.Drawing.Size(75, 21);
+            this.textBoxHotelCost.TabIndex = 12;
+            // 
+            // buttonAddHotel
+            // 
+            this.buttonAddHotel.Location = new System.Drawing.Point(468, 276);
+            this.buttonAddHotel.Name = "buttonAddHotel";
+            this.buttonAddHotel.Size = new System.Drawing.Size(75, 52);
+            this.buttonAddHotel.TabIndex = 10;
+            this.buttonAddHotel.Text = "Добавить";
+            this.buttonAddHotel.UseVisualStyleBackColor = true;
+            // 
+            // tabPageImages
+            // 
+            this.tabPageImages.Location = new System.Drawing.Point(4, 22);
+            this.tabPageImages.Name = "tabPageImages";
+            this.tabPageImages.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageImages.Size = new System.Drawing.Size(549, 341);
+            this.tabPageImages.TabIndex = 3;
+            this.tabPageImages.Text = "Картинки";
+            this.tabPageImages.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -588,8 +588,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCities)).EndInit();
             this.tabPageHotels.ResumeLayout(false);
             this.tabPageHotels.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotels)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHotelStars)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotels)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -97,6 +97,10 @@ namespace TravelAgencySiteClient
             this.dataGridViewHotels.DataSource
                 = JsonConvert.DeserializeObject<List<Hotel>>(responseJson)
                 .ToList();
+
+            this.dataGridViewHotels.Columns["stars"].Visible = false;
+            this.dataGridViewHotels.Columns["cost"].Visible = false;
+            this.dataGridViewHotels.Columns["info"].Visible = false;
         }
 
         private async void FillingDataComboBoxAllCountries()
