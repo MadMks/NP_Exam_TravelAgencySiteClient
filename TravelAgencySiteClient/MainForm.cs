@@ -55,10 +55,39 @@ namespace TravelAgencySiteClient
             this.buttonAddCountry.Click += ButtonAddCountry_Click;
             // City tab
             this.buttonAddCity.Click += ButtonAddCity_Click;
-            
+            // Hotel tab
+            this.buttonAddHotel.Click += ButtonAddHotel_Click;
+            this.textBoxHotelCost.TextChanged += TextBoxHotelCost_TextChanged;
         }
 
-        
+        private void TextBoxHotelCost_TextChanged(object sender, EventArgs e)
+        {
+            // TODO вместо пустой строки - 0
+            // TODO только цыфры (возможно в другом обработчике).
+        }
+
+        private void ButtonAddHotel_Click(object sender, EventArgs e)
+        {
+            // TODO проверка заполнения полей
+            // TODO ввод только цыфр в поле цены.
+
+            string hotelName = this.textBoxHotelName.Text;
+            string countryName
+                = this.comboBoxHotelCityAndCountry.SelectedItem
+                .ToString()
+                .Split(':')[0]
+                .TrimEnd();
+            string cityName 
+                = this.comboBoxHotelCityAndCountry.SelectedItem
+                .ToString()
+                .Split(':')[1]
+                .TrimStart();
+            int stars = Convert.ToInt32(this.numericUpDownHotelStars.Value);
+            int cost = Convert.ToInt32(this.textBoxHotelCost.Text);
+            string info = this.textBoxHotelDesc.Text;
+
+            // TODO добавление отеля
+        }
 
         private async void TabControlAdmin_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -88,7 +117,7 @@ namespace TravelAgencySiteClient
             {
                 Console.WriteLine(">> Загрузка картинок");
 
-                // TODO загрузка отелей
+                // TODO загрузка картинок
 
                 // TODO заполнение комбобоксов
             }
@@ -100,7 +129,7 @@ namespace TravelAgencySiteClient
 
             this.comboBoxHotelCityAndCountry.DataSource
                 = JsonConvert.DeserializeObject<List<City>>(responseJson)
-                .Select(c => c.cityName + " : " + c.countryName).Distinct()
+                .Select(c => c.countryName + " : " + c.cityName).Distinct()
                 .ToList<string>();
         }
 
