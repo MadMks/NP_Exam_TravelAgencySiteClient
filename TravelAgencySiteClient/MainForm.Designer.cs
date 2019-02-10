@@ -52,13 +52,13 @@
             this.textBoxAddCountry = new System.Windows.Forms.TextBox();
             this.buttonAddCountry = new System.Windows.Forms.Button();
             this.tabPageCities = new System.Windows.Forms.TabPage();
-            this.tabPageHotels = new System.Windows.Forms.TabPage();
-            this.tabPageImages = new System.Windows.Forms.TabPage();
+            this.comboBoxCountriesForAddCity = new System.Windows.Forms.ComboBox();
             this.dataGridViewCities = new System.Windows.Forms.DataGridView();
             this.buttonDelCity = new System.Windows.Forms.Button();
             this.textBoxAddCity = new System.Windows.Forms.TextBox();
             this.buttonAddCity = new System.Windows.Forms.Button();
-            this.comboBoxCountriesForAddCity = new System.Windows.Forms.ComboBox();
+            this.tabPageHotels = new System.Windows.Forms.TabPage();
+            this.tabPageImages = new System.Windows.Forms.TabPage();
             this.tabControl.SuspendLayout();
             this.tabPageTours.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).BeginInit();
@@ -318,25 +318,14 @@
             this.tabPageCities.Text = "Города";
             this.tabPageCities.UseVisualStyleBackColor = true;
             // 
-            // tabPageHotels
+            // comboBoxCountriesForAddCity
             // 
-            this.tabPageHotels.Location = new System.Drawing.Point(4, 22);
-            this.tabPageHotels.Name = "tabPageHotels";
-            this.tabPageHotels.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageHotels.Size = new System.Drawing.Size(549, 265);
-            this.tabPageHotels.TabIndex = 2;
-            this.tabPageHotels.Text = "Отели";
-            this.tabPageHotels.UseVisualStyleBackColor = true;
-            // 
-            // tabPageImages
-            // 
-            this.tabPageImages.Location = new System.Drawing.Point(4, 22);
-            this.tabPageImages.Name = "tabPageImages";
-            this.tabPageImages.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageImages.Size = new System.Drawing.Size(549, 265);
-            this.tabPageImages.TabIndex = 3;
-            this.tabPageImages.Text = "Картинки";
-            this.tabPageImages.UseVisualStyleBackColor = true;
+            this.comboBoxCountriesForAddCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCountriesForAddCity.FormattingEnabled = true;
+            this.comboBoxCountriesForAddCity.Location = new System.Drawing.Point(301, 204);
+            this.comboBoxCountriesForAddCity.Name = "comboBoxCountriesForAddCity";
+            this.comboBoxCountriesForAddCity.Size = new System.Drawing.Size(202, 21);
+            this.comboBoxCountriesForAddCity.TabIndex = 8;
             // 
             // dataGridViewCities
             // 
@@ -375,13 +364,25 @@
             this.buttonAddCity.Text = "Добавить";
             this.buttonAddCity.UseVisualStyleBackColor = true;
             // 
-            // comboBoxCountriesForAddCity
+            // tabPageHotels
             // 
-            this.comboBoxCountriesForAddCity.FormattingEnabled = true;
-            this.comboBoxCountriesForAddCity.Location = new System.Drawing.Point(301, 204);
-            this.comboBoxCountriesForAddCity.Name = "comboBoxCountriesForAddCity";
-            this.comboBoxCountriesForAddCity.Size = new System.Drawing.Size(202, 21);
-            this.comboBoxCountriesForAddCity.TabIndex = 8;
+            this.tabPageHotels.Location = new System.Drawing.Point(4, 22);
+            this.tabPageHotels.Name = "tabPageHotels";
+            this.tabPageHotels.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageHotels.Size = new System.Drawing.Size(549, 265);
+            this.tabPageHotels.TabIndex = 2;
+            this.tabPageHotels.Text = "Отели";
+            this.tabPageHotels.UseVisualStyleBackColor = true;
+            // 
+            // tabPageImages
+            // 
+            this.tabPageImages.Location = new System.Drawing.Point(4, 22);
+            this.tabPageImages.Name = "tabPageImages";
+            this.tabPageImages.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageImages.Size = new System.Drawing.Size(549, 265);
+            this.tabPageImages.TabIndex = 3;
+            this.tabPageImages.Text = "Картинки";
+            this.tabPageImages.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
