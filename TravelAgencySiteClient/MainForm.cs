@@ -30,7 +30,7 @@ namespace TravelAgencySiteClient
 
             this.comboBoxCities.Enabled = false;
             this.buttonSelectCity.Enabled = false;
-            
+
             this.FillingDataComboBoxCountries();
 
             this.tabControl.SelectedIndexChanged 
@@ -69,7 +69,34 @@ namespace TravelAgencySiteClient
                 Console.WriteLine(">> Загрузка городов");
 
                 await LoadAllCitiesForAdminTab();
+
+                this.FillingDataComboBoxAllCountries();
             }
+            else if (tabControlAdmin.SelectedTab.Name == tabPageHotels.Name)
+            {
+                Console.WriteLine(">> Загрузка отелей");
+
+                // TODO загрузка всех отелей
+
+                // TODO заполнение комбобоксов
+            }
+            else if (tabControlAdmin.SelectedTab.Name == tabPageImages.Name)
+            {
+                Console.WriteLine(">> Загрузка картинок");
+
+                // TODO загрузка отелей
+
+                // TODO заполнение комбобоксов
+            }
+        }
+
+        private async void FillingDataComboBoxAllCountries()
+        {
+            responseJson = await api.LoadAllCountriesDataAsync();
+
+            this.comboBoxCountriesForAddCity.DataSource
+                = JsonConvert.DeserializeObject<List<Country>>(responseJson)
+                .Select(c => c.countryName).ToList();
         }
 
         private async Task LoadAllCitiesForAdminTab()
@@ -82,7 +109,7 @@ namespace TravelAgencySiteClient
                 .ToList();
         }
 
-        private void ButtonAddCountry_Click(object sender, EventArgs e)
+        private async void ButtonAddCountry_Click(object sender, EventArgs e)
         {
             // TODO проверитть на заполненность текстбокса.
             string country = textBoxAddCountry.Text;
@@ -90,7 +117,7 @@ namespace TravelAgencySiteClient
 
             this.textBoxAddCountry.Text = "";
 
-            LoadAllCountriesForAdminTab();
+            await LoadAllCountriesForAdminTab();
         }
 
         private async void AddNewCountry(string country)
@@ -164,7 +191,11 @@ namespace TravelAgencySiteClient
 
             this.dataGridViewTours.DataSource
                 = JsonConvert.DeserializeObject<List<Hotel>>(responseJson)
+                //.Select(TODO только то чно нужно ИЛИ все)
                 .ToList();
+
+            this.dataGridViewTours.Columns["cityName"].Visible = false;
+            this.dataGridViewTours.Columns["countryName"].Visible = false;
         }
 
         private void ButtonSelectCountry_Click(object sender, EventArgs e)
@@ -179,7 +210,7 @@ namespace TravelAgencySiteClient
         private async void FillingDataComboBoxCities(string country)
         {
             responseJson = await api.LoadCitiesDataAsync(country);
-            
+
             this.comboBoxCities.DataSource
                 = JsonConvert.DeserializeObject<List<City>>(responseJson)
                 .Select(c => c.cityName).ToList();
