@@ -60,7 +60,7 @@
             this.tabPageHotels = new System.Windows.Forms.TabPage();
             this.tabPageImages = new System.Windows.Forms.TabPage();
             this.comboBoxHotelCityAndCountry = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewHotels = new System.Windows.Forms.DataGridView();
             this.buttonDelHotel = new System.Windows.Forms.Button();
             this.textBoxHotelCost = new System.Windows.Forms.TextBox();
             this.buttonAddHotel = new System.Windows.Forms.Button();
@@ -85,7 +85,7 @@
             this.tabPageCities.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCities)).BeginInit();
             this.tabPageHotels.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotels)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHotelStars)).BeginInit();
             this.SuspendLayout();
             // 
@@ -395,7 +395,7 @@
             this.tabPageHotels.Controls.Add(this.textBoxHotelDesc);
             this.tabPageHotels.Controls.Add(this.textBoxHotelName);
             this.tabPageHotels.Controls.Add(this.comboBoxHotelCityAndCountry);
-            this.tabPageHotels.Controls.Add(this.dataGridView1);
+            this.tabPageHotels.Controls.Add(this.dataGridViewHotels);
             this.tabPageHotels.Controls.Add(this.buttonDelHotel);
             this.tabPageHotels.Controls.Add(this.textBoxHotelCost);
             this.tabPageHotels.Controls.Add(this.buttonAddHotel);
@@ -426,17 +426,17 @@
             this.comboBoxHotelCityAndCountry.Size = new System.Drawing.Size(289, 21);
             this.comboBoxHotelCityAndCountry.TabIndex = 13;
             // 
-            // dataGridView1
+            // dataGridViewHotels
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 10);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(537, 138);
-            this.dataGridView1.TabIndex = 9;
+            this.dataGridViewHotels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHotels.Location = new System.Drawing.Point(6, 10);
+            this.dataGridViewHotels.MultiSelect = false;
+            this.dataGridViewHotels.Name = "dataGridViewHotels";
+            this.dataGridViewHotels.ReadOnly = true;
+            this.dataGridViewHotels.RowTemplate.Height = 23;
+            this.dataGridViewHotels.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewHotels.Size = new System.Drawing.Size(537, 138);
+            this.dataGridViewHotels.TabIndex = 9;
             // 
             // buttonDelHotel
             // 
@@ -588,7 +588,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCities)).EndInit();
             this.tabPageHotels.ResumeLayout(false);
             this.tabPageHotels.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotels)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHotelStars)).EndInit();
             this.ResumeLayout(false);
 
@@ -635,7 +635,7 @@
         private System.Windows.Forms.TextBox textBoxHotelDesc;
         private System.Windows.Forms.TextBox textBoxHotelName;
         private System.Windows.Forms.ComboBox comboBoxHotelCityAndCountry;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewHotels;
         private System.Windows.Forms.Button buttonDelHotel;
         private System.Windows.Forms.TextBox textBoxHotelCost;
         private System.Windows.Forms.Button buttonAddHotel;

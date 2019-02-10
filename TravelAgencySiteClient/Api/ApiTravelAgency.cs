@@ -72,6 +72,13 @@ namespace TravelAgencySiteClient
             return responseJson;
         }
 
+        public async Task<string> LoadAllHotelsDataAsync()
+        {
+            string request = requestFactory.GenerateAllHotels();
+
+            return await LoadDataAsync(request);
+        }
+
         //
         // Методы записи данных.
         //

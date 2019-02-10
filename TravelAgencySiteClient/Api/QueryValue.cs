@@ -13,6 +13,7 @@ namespace TravelAgencySiteClient
         public static string getCities { get; }
         public static string getAllCities { get; }
         public static string getHotels { get; }
+        public static string getAllHotels { get; }
         public static string regUser { get; }
         public static string addCountry { get; }
 
@@ -25,6 +26,7 @@ namespace TravelAgencySiteClient
             getCities = "getCities";
             getAllCities = "getAllCities";
             getHotels = "getHotels";
+            getAllHotels = "getAllHotels";
             regUser = "regUser";
             addCountry = "addCountry";
         }

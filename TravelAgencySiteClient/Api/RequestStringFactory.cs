@@ -70,6 +70,15 @@ namespace TravelAgencySiteClient
             return requestStr;
         }
 
+        public string GenerateAllHotels()
+        {
+            string requestStr =
+                "token=" + token +
+                "&param=" + QueryValue.getAllHotels;
+
+            return requestStr;
+        }
+
         internal string GenerateRegUser(string login, string pass, string email)
         {
             string requestStr =

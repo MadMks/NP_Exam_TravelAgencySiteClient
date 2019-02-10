@@ -76,7 +76,7 @@ namespace TravelAgencySiteClient
             {
                 Console.WriteLine(">> Загрузка отелей");
 
-                // TODO загрузка всех отелей
+                await FillingDataGridAllHotelsForAdminTab();
 
                 // TODO заполнение комбобоксов
             }
@@ -88,6 +88,15 @@ namespace TravelAgencySiteClient
 
                 // TODO заполнение комбобоксов
             }
+        }
+
+        private async Task FillingDataGridAllHotelsForAdminTab()
+        {
+            responseJson = await api.LoadAllHotelsDataAsync();
+
+            this.dataGridViewHotels.DataSource
+                = JsonConvert.DeserializeObject<List<Hotel>>(responseJson)
+                .ToList();
         }
 
         private async void FillingDataComboBoxAllCountries()
