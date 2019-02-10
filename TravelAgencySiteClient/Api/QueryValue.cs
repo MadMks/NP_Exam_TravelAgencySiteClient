@@ -9,6 +9,7 @@ namespace TravelAgencySiteClient
     class QueryValue
     {
         public static string getCountries { get; }
+        public static string getAllCountries { get; }
         public static string getCities { get; }
         public static string getAllCities { get; }
         public static string getHotels { get; }
@@ -20,6 +21,7 @@ namespace TravelAgencySiteClient
         static QueryValue()
         {
             getCountries = "getCountries";
+            getAllCountries = "getAllCountries";
             getCities = "getCities";
             getAllCities = "getAllCities";
             getHotels = "getHotels";

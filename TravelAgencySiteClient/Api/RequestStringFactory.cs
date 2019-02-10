@@ -31,6 +31,15 @@ namespace TravelAgencySiteClient
             return requestStr;
         }
 
+        internal string GenerateAllCountries()
+        {
+            string requestStr =
+                "token=" + token +
+                "&param=" + QueryValue.getAllCountries;
+
+            return requestStr;
+        }
+
         public string GenerateCities(string country)
         {
             string requestStr =

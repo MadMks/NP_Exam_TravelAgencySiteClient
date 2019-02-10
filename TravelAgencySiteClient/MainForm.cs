@@ -62,7 +62,7 @@ namespace TravelAgencySiteClient
             {
                 Console.WriteLine(">> Загрузка стран");
 
-                await LoadCountriesForAdminTab();
+                await LoadAllCountriesForAdminTab();
             }
             else if (tabControlAdmin.SelectedTab.Name == tabPageCities.Name)
             {
@@ -89,6 +89,8 @@ namespace TravelAgencySiteClient
             this.AddNewCountry(country);
 
             this.textBoxAddCountry.Text = "";
+
+            LoadAllCountriesForAdminTab();
         }
 
         private async void AddNewCountry(string country)
@@ -214,14 +216,14 @@ namespace TravelAgencySiteClient
             else if (tabControl.SelectedTab.Name == tabPageAdminForm.Name)
             {
                 Console.WriteLine("TODO: loading admins data all table");
-                await LoadCountriesForAdminTab();
+                await LoadAllCountriesForAdminTab();
             }
         }
 
-        private async Task LoadCountriesForAdminTab()
+        private async Task LoadAllCountriesForAdminTab()
         {
             // Загрузка стран
-            responseJson = await api.LoadCountriesDataAsync();
+            responseJson = await api.LoadAllCountriesDataAsync();
 
             this.dataGridViewCountries.DataSource
                 = JsonConvert.DeserializeObject<List<Country>>(responseJson)
