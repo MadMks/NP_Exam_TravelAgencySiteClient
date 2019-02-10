@@ -37,24 +37,31 @@
             this.comboBoxCountries = new System.Windows.Forms.ComboBox();
             this.labelSelectTours = new System.Windows.Forms.Label();
             this.tabPageRegistration = new System.Windows.Forms.TabPage();
-            this.tabPageAdminForm = new System.Windows.Forms.TabPage();
-            this.labelLogin = new System.Windows.Forms.Label();
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.labelEmail = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.buttonRegister = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.labelLogin = new System.Windows.Forms.Label();
+            this.tabPageAdminForm = new System.Windows.Forms.TabPage();
+            this.tabControlAdmin = new System.Windows.Forms.TabControl();
+            this.tabPageCountries = new System.Windows.Forms.TabPage();
+            this.dataGridViewCountries = new System.Windows.Forms.DataGridView();
             this.buttonDel = new System.Windows.Forms.Button();
             this.textBoxAdding = new System.Windows.Forms.TextBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.tabPageCities = new System.Windows.Forms.TabPage();
+            this.tabPageHotels = new System.Windows.Forms.TabPage();
+            this.tabPageImages = new System.Windows.Forms.TabPage();
             this.tabControl.SuspendLayout();
             this.tabPageTours.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).BeginInit();
             this.tabPageRegistration.SuspendLayout();
             this.tabPageAdminForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabControlAdmin.SuspendLayout();
+            this.tabPageCountries.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCountries)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -158,51 +165,21 @@
             this.tabPageRegistration.Text = "Регистрация";
             this.tabPageRegistration.UseVisualStyleBackColor = true;
             // 
-            // tabPageAdminForm
+            // buttonRegister
             // 
-            this.tabPageAdminForm.Controls.Add(this.textBoxAdding);
-            this.tabPageAdminForm.Controls.Add(this.buttonDel);
-            this.tabPageAdminForm.Controls.Add(this.buttonAdd);
-            this.tabPageAdminForm.Controls.Add(this.dataGridView1);
-            this.tabPageAdminForm.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAdminForm.Name = "tabPageAdminForm";
-            this.tabPageAdminForm.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdminForm.Size = new System.Drawing.Size(570, 314);
-            this.tabPageAdminForm.TabIndex = 2;
-            this.tabPageAdminForm.Text = "Админ";
-            this.tabPageAdminForm.UseVisualStyleBackColor = true;
+            this.buttonRegister.Location = new System.Drawing.Point(40, 117);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(124, 23);
+            this.buttonRegister.TabIndex = 6;
+            this.buttonRegister.Text = "Регистрация";
+            this.buttonRegister.UseVisualStyleBackColor = true;
             // 
-            // labelLogin
+            // textBoxEmail
             // 
-            this.labelLogin.AutoSize = true;
-            this.labelLogin.Location = new System.Drawing.Point(11, 16);
-            this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(41, 13);
-            this.labelLogin.TabIndex = 0;
-            this.labelLogin.Text = "Логин:";
-            // 
-            // textBoxLogin
-            // 
-            this.textBoxLogin.Location = new System.Drawing.Point(63, 13);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(134, 21);
-            this.textBoxLogin.TabIndex = 1;
-            // 
-            // labelPassword
-            // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(11, 48);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(48, 13);
-            this.labelPassword.TabIndex = 2;
-            this.labelPassword.Text = "Пароль:";
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Location = new System.Drawing.Point(63, 44);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(134, 21);
-            this.textBoxPassword.TabIndex = 3;
+            this.textBoxEmail.Location = new System.Drawing.Point(63, 76);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(134, 21);
+            this.textBoxEmail.TabIndex = 5;
             // 
             // labelEmail
             // 
@@ -213,43 +190,90 @@
             this.labelEmail.TabIndex = 4;
             this.labelEmail.Text = "Email:";
             // 
-            // textBoxEmail
+            // textBoxPassword
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(63, 76);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(134, 21);
-            this.textBoxEmail.TabIndex = 5;
+            this.textBoxPassword.Location = new System.Drawing.Point(63, 44);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(134, 21);
+            this.textBoxPassword.TabIndex = 3;
             // 
-            // buttonRegister
+            // labelPassword
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(40, 117);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(124, 23);
-            this.buttonRegister.TabIndex = 6;
-            this.buttonRegister.Text = "Регистрация";
-            this.buttonRegister.UseVisualStyleBackColor = true;
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(11, 48);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(48, 13);
+            this.labelPassword.TabIndex = 2;
+            this.labelPassword.Text = "Пароль:";
             // 
-            // dataGridView1
+            // textBoxLogin
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(377, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.textBoxLogin.Location = new System.Drawing.Point(63, 13);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(134, 21);
+            this.textBoxLogin.TabIndex = 1;
             // 
-            // buttonAdd
+            // labelLogin
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(25, 270);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 1;
-            this.buttonAdd.Text = "Добавить";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.labelLogin.AutoSize = true;
+            this.labelLogin.Location = new System.Drawing.Point(11, 16);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(41, 13);
+            this.labelLogin.TabIndex = 0;
+            this.labelLogin.Text = "Логин:";
+            // 
+            // tabPageAdminForm
+            // 
+            this.tabPageAdminForm.Controls.Add(this.tabControlAdmin);
+            this.tabPageAdminForm.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAdminForm.Name = "tabPageAdminForm";
+            this.tabPageAdminForm.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAdminForm.Size = new System.Drawing.Size(570, 314);
+            this.tabPageAdminForm.TabIndex = 2;
+            this.tabPageAdminForm.Text = "Админ";
+            this.tabPageAdminForm.UseVisualStyleBackColor = true;
+            // 
+            // tabControlAdmin
+            // 
+            this.tabControlAdmin.Controls.Add(this.tabPageCountries);
+            this.tabControlAdmin.Controls.Add(this.tabPageCities);
+            this.tabControlAdmin.Controls.Add(this.tabPageHotels);
+            this.tabControlAdmin.Controls.Add(this.tabPageImages);
+            this.tabControlAdmin.Location = new System.Drawing.Point(7, 17);
+            this.tabControlAdmin.Name = "tabControlAdmin";
+            this.tabControlAdmin.SelectedIndex = 0;
+            this.tabControlAdmin.Size = new System.Drawing.Size(557, 291);
+            this.tabControlAdmin.TabIndex = 4;
+            // 
+            // tabPageCountries
+            // 
+            this.tabPageCountries.Controls.Add(this.dataGridViewCountries);
+            this.tabPageCountries.Controls.Add(this.buttonDel);
+            this.tabPageCountries.Controls.Add(this.textBoxAdding);
+            this.tabPageCountries.Controls.Add(this.buttonAdd);
+            this.tabPageCountries.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCountries.Name = "tabPageCountries";
+            this.tabPageCountries.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCountries.Size = new System.Drawing.Size(549, 265);
+            this.tabPageCountries.TabIndex = 0;
+            this.tabPageCountries.Text = "Страны";
+            this.tabPageCountries.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewCountries
+            // 
+            this.dataGridViewCountries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCountries.Location = new System.Drawing.Point(6, 6);
+            this.dataGridViewCountries.MultiSelect = false;
+            this.dataGridViewCountries.Name = "dataGridViewCountries";
+            this.dataGridViewCountries.ReadOnly = true;
+            this.dataGridViewCountries.RowTemplate.Height = 23;
+            this.dataGridViewCountries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewCountries.Size = new System.Drawing.Size(537, 178);
+            this.dataGridViewCountries.TabIndex = 0;
             // 
             // buttonDel
             // 
-            this.buttonDel.Location = new System.Drawing.Point(327, 270);
+            this.buttonDel.Location = new System.Drawing.Point(458, 227);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(75, 23);
             this.buttonDel.TabIndex = 2;
@@ -258,10 +282,49 @@
             // 
             // textBoxAdding
             // 
-            this.textBoxAdding.Location = new System.Drawing.Point(25, 237);
+            this.textBoxAdding.Location = new System.Drawing.Point(14, 200);
             this.textBoxAdding.Name = "textBoxAdding";
             this.textBoxAdding.Size = new System.Drawing.Size(219, 21);
             this.textBoxAdding.TabIndex = 3;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(14, 227);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.TabIndex = 1;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            // 
+            // tabPageCities
+            // 
+            this.tabPageCities.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCities.Name = "tabPageCities";
+            this.tabPageCities.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCities.Size = new System.Drawing.Size(549, 265);
+            this.tabPageCities.TabIndex = 1;
+            this.tabPageCities.Text = "Города";
+            this.tabPageCities.UseVisualStyleBackColor = true;
+            // 
+            // tabPageHotels
+            // 
+            this.tabPageHotels.Location = new System.Drawing.Point(4, 22);
+            this.tabPageHotels.Name = "tabPageHotels";
+            this.tabPageHotels.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageHotels.Size = new System.Drawing.Size(549, 265);
+            this.tabPageHotels.TabIndex = 2;
+            this.tabPageHotels.Text = "Отели";
+            this.tabPageHotels.UseVisualStyleBackColor = true;
+            // 
+            // tabPageImages
+            // 
+            this.tabPageImages.Location = new System.Drawing.Point(4, 22);
+            this.tabPageImages.Name = "tabPageImages";
+            this.tabPageImages.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageImages.Size = new System.Drawing.Size(549, 265);
+            this.tabPageImages.TabIndex = 3;
+            this.tabPageImages.Text = "Картинки";
+            this.tabPageImages.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -278,8 +341,10 @@
             this.tabPageRegistration.ResumeLayout(false);
             this.tabPageRegistration.PerformLayout();
             this.tabPageAdminForm.ResumeLayout(false);
-            this.tabPageAdminForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabControlAdmin.ResumeLayout(false);
+            this.tabPageCountries.ResumeLayout(false);
+            this.tabPageCountries.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCountries)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -303,10 +368,15 @@
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.Label labelLogin;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewCountries;
         private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.TextBox textBoxAdding;
+        private System.Windows.Forms.TabControl tabControlAdmin;
+        private System.Windows.Forms.TabPage tabPageCountries;
+        private System.Windows.Forms.TabPage tabPageCities;
+        private System.Windows.Forms.TabPage tabPageHotels;
+        private System.Windows.Forms.TabPage tabPageImages;
     }
 }
 

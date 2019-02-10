@@ -36,17 +36,41 @@ namespace TravelAgencySiteClient
             this.tabControl.SelectedIndexChanged 
                 += TabControl_SelectedIndexChanged;
 
+
             // Tours tab
             this.buttonSelectCountry.Click += ButtonSelectCountry_Click;
             this.buttonSelectCity.Click += ButtonSelectCity_Click;
             this.dataGridViewTours.CellDoubleClick 
                 += DataGridViewTours_CellDoubleClick;
 
+
             // Register tab
             this.buttonRegister.Click += ButtonRegister_Click;
 
-            // Admin tab
+
+            // Admin tabs
             this.buttonAdd.Click += ButtonAdd_Click;
+            // Country tab
+            this.tabControlAdmin.SelectedIndexChanged
+                += TabControlAdmin_SelectedIndexChanged;
+        }
+
+        private async void TabControlAdmin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControlAdmin.SelectedTab.Name == tabPageCountries.Name)
+            {
+                Console.WriteLine(">> Загрузка стран");
+                // Загрузка стран
+                responseJson = await api.LoadCountriesDataAsync();
+
+                this.dataGridViewCountries.DataSource
+                    = JsonConvert.DeserializeObject<List<Country>>(responseJson)
+                    .ToList();
+            }
+            else if (tabControlAdmin.SelectedTab.Name == tabPageCities.Name)
+            {
+                Console.WriteLine(">> Загрузка городов");
+            }
         }
 
         private void ButtonAdd_Click(object sender, EventArgs e)
@@ -180,9 +204,10 @@ namespace TravelAgencySiteClient
             {
                 Console.WriteLine("TODO: loading admins data all table");
 
+                // Загрузка стран
                 responseJson = await api.LoadCountriesDataAsync();
 
-                this.dataGridView1.DataSource
+                this.dataGridViewCountries.DataSource
                     = JsonConvert.DeserializeObject<List<Country>>(responseJson)
                     .ToList();
             }
