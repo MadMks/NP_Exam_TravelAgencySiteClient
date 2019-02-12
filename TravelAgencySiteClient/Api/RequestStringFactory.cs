@@ -110,5 +110,15 @@ namespace TravelAgencySiteClient
 
             return requestStr;
         }
+
+        public string GenerateAddHotel(string obj)
+        {
+            string requestStr =
+                "token=" + token +
+                "&param=" + QueryValue.addHotel +
+                "&object=" + obj;
+
+            return requestStr;
+        }
     }
 }

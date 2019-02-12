@@ -7,6 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using TravelAgencySiteClient.Entities;
 
 namespace TravelAgencySiteClient
 {
@@ -107,6 +108,15 @@ namespace TravelAgencySiteClient
             string obj = JsonConvert.SerializeObject(new City(country, city));
 
             string request = requestFactory.GenerateAddCity(obj);
+
+            return await LoadDataAsync(request);
+        }
+
+        public async Task<string> AddHotelAsync(Hotel hotel)
+        {
+            string obj = JsonConvert.SerializeObject(hotel);
+
+            string request = requestFactory.GenerateAddHotel(obj);
 
             return await LoadDataAsync(request);
         }
