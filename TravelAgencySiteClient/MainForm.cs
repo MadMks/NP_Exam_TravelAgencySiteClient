@@ -74,8 +74,7 @@ namespace TravelAgencySiteClient
             string hotelName = this.textBoxHotelName.Text;
             string countryName
                 = this.comboBoxHotelCityAndCountry.SelectedItem
-                .ToString()
-                .Split(':')[0]
+                .ToString()                .Split(':')[0]
                 .TrimEnd();
             string cityName 
                 = this.comboBoxHotelCityAndCountry.SelectedItem
@@ -112,14 +111,6 @@ namespace TravelAgencySiteClient
                 await FillingDataGridAllHotelsForAdminTab();
 
                 await FillingDataComboBoxCityAndCountry();
-            }
-            else if (tabControlAdmin.SelectedTab.Name == tabPageImages.Name)
-            {
-                Console.WriteLine(">> Загрузка картинок");
-
-                // TODO загрузка картинок
-
-                // TODO заполнение комбобоксов
             }
         }
 
