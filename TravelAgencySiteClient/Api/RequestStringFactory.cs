@@ -130,5 +130,15 @@ namespace TravelAgencySiteClient
 
             return requestStr;
         }
+
+        public string GenerateDelCity(string cityId)
+        {
+            string requestStr =
+                "token=" + token +
+                "&param=" + QueryValue.delCity +
+                "&cityId=" + cityId;
+
+            return requestStr;
+        }
     }
 }

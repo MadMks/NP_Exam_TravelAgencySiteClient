@@ -75,7 +75,7 @@ namespace TravelAgencySiteClient
 
         private async void DelCity(string cityId)
         {
-            //responseJson = await api.DelCityAsync(cityId);
+            responseJson = await api.DelCityAsync(cityId);
 
             await LoadAllCitiesForAdminTab();
         }

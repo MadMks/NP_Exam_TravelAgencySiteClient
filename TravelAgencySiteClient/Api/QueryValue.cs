@@ -19,6 +19,7 @@ namespace TravelAgencySiteClient
         public static string addCity { get; }
         public static string addHotel { get; }
         public static string delCountry { get; }
+        public static string delCity { get; }
 
         public QueryValue() {}
 
@@ -35,6 +36,7 @@ namespace TravelAgencySiteClient
             addCity = "addCity";
             addHotel = "addHotel";
             delCountry = "delCountry";
+            delCity = "delCity";
         }
 
         public override string ToString()

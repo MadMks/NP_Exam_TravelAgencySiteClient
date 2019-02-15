@@ -135,6 +135,13 @@ namespace TravelAgencySiteClient
             return await LoadDataAsync(request);
         }
 
+        public async Task<string> DelCityAsync(string cityId)
+        {
+            string request = requestFactory.GenerateDelCity(cityId);
+
+            return await LoadDataAsync(request);
+        }
+
 
         //
         // Загрузка данных.
