@@ -97,7 +97,7 @@ namespace TravelAgencySiteClient
         public async Task<string> AddCountryAsync(string country)
         {
             string obj = JsonConvert.SerializeObject(new Country(country));
-
+            
             string request = requestFactory.GenerateAddCountry(obj);
 
             return await LoadDataAsync(request);
@@ -126,11 +126,11 @@ namespace TravelAgencySiteClient
         // Методы удаления данных.
         //
 
-        public async Task<string> DelCountryAsync(string delCountry)
+        public async Task<string> DelCountryAsync(string countryId)
         {
-            string obj = JsonConvert.SerializeObject(new Country(delCountry));
+            //string obj = JsonConvert.SerializeObject(new Country(delCountry));
 
-            string request = requestFactory.GenerateDelCountry(obj);
+            string request = requestFactory.GenerateDelCountry(countryId);
 
             return await LoadDataAsync(request);
         }

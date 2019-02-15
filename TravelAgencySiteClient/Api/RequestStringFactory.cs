@@ -121,12 +121,12 @@ namespace TravelAgencySiteClient
             return requestStr;
         }
 
-        public string GenerateDelCountry(string obj)
+        public string GenerateDelCountry(string countryId)
         {
             string requestStr =
                 "token=" + token +
                 "&param=" + QueryValue.delCountry +
-                "&object=" + obj;
+                "&countryId=" + countryId;
 
             return requestStr;
         }

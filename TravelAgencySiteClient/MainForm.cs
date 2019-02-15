@@ -63,15 +63,15 @@ namespace TravelAgencySiteClient
 
         private async void ButtonDelCountry_Click(object sender, EventArgs e)
         {
-            string delCountry
+            string countryId
                 = this.dataGridViewCountries
                 .SelectedRows[0]
-                .Cells["countryName"]
+                .Cells["id"]
                 .Value.ToString();
 
-            responseJson = await api.DelCountryAsync(delCountry);
+            responseJson = await api.DelCountryAsync(countryId);
 
-            Console.WriteLine("Delete: " + delCountry + " = " + responseJson );
+            Console.WriteLine("Delete id: " + countryId + " = " + responseJson );
         }
 
         private void TextBoxHotelCost_TextChanged(object sender, EventArgs e)
