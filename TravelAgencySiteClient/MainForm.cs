@@ -80,7 +80,7 @@ namespace TravelAgencySiteClient
             await LoadAllCitiesForAdminTab();
         }
 
-        private async void ButtonDelCountry_Click(object sender, EventArgs e)
+        private void ButtonDelCountry_Click(object sender, EventArgs e)
         {
             string countryId =
                 this.dataGridViewCountries
@@ -88,9 +88,14 @@ namespace TravelAgencySiteClient
                 .Cells["id"]
                 .Value.ToString();
 
+            this.DelCountry(countryId);
+        }
+
+        private async void DelCountry(string countryId)
+        {
             responseJson = await api.DelCountryAsync(countryId);
 
-            Console.WriteLine("Delete id: " + countryId + " = " + responseJson );
+            Console.WriteLine("Delete id: " + countryId + " = " + responseJson);
 
             await LoadAllCountriesForAdminTab();
         }
