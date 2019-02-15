@@ -72,6 +72,8 @@ namespace TravelAgencySiteClient
             responseJson = await api.DelCountryAsync(countryId);
 
             Console.WriteLine("Delete id: " + countryId + " = " + responseJson );
+
+            await LoadAllCountriesForAdminTab();
         }
 
         private void TextBoxHotelCost_TextChanged(object sender, EventArgs e)
@@ -192,8 +194,7 @@ namespace TravelAgencySiteClient
 
             this.textBoxAddCountry.Text = "";
 
-            // TODO убрать? так как обновить может перед добавлением.
-            await LoadAllCountriesForAdminTab();
+            
         }
 
         private async void ButtonAddCity_Click(object sender, EventArgs e)
@@ -215,6 +216,8 @@ namespace TravelAgencySiteClient
             responseJson = await api.AddCountryAsync(country);
 
             Console.WriteLine("AddNewCountry: " + responseJson);
+            
+            await LoadAllCountriesForAdminTab();
         }
 
         private async void AddNewCity(string country, string city)
