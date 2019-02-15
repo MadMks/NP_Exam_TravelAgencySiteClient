@@ -56,15 +56,34 @@ namespace TravelAgencySiteClient
             this.buttonDelCountry.Click += ButtonDelCountry_Click;
             // City tab
             this.buttonAddCity.Click += ButtonAddCity_Click;
+            this.buttonDelCity.Click += ButtonDelCity_Click;
             // Hotel tab
             this.buttonAddHotel.Click += ButtonAddHotel_Click;
             this.textBoxHotelCost.TextChanged += TextBoxHotelCost_TextChanged;
         }
 
+        private void ButtonDelCity_Click(object sender, EventArgs e)
+        {
+            string cityId =
+                this.dataGridViewCities
+                .SelectedRows[0]
+                .Cells["id"]
+                .Value.ToString();
+            Console.WriteLine("city id = " + cityId);
+            this.DelCity(cityId);
+        }
+
+        private async void DelCity(string cityId)
+        {
+            //responseJson = await api.DelCityAsync(cityId);
+
+            await LoadAllCitiesForAdminTab();
+        }
+
         private async void ButtonDelCountry_Click(object sender, EventArgs e)
         {
-            string countryId
-                = this.dataGridViewCountries
+            string countryId =
+                this.dataGridViewCountries
                 .SelectedRows[0]
                 .Cells["id"]
                 .Value.ToString();
