@@ -230,8 +230,7 @@ namespace TravelAgencySiteClient
 
             this.textBoxAddCity.Text = "";
 
-            // TODO убрать? так как обновить может перед добавлением.
-            await LoadAllCitiesForAdminTab();
+            
         }
 
 
@@ -249,6 +248,8 @@ namespace TravelAgencySiteClient
             responseJson = await api.AddCityAsync(country, city);
 
             Console.WriteLine("AddNewCity: " + responseJson);
+
+            await LoadAllCitiesForAdminTab();
         }
 
         private void ButtonRegister_Click(object sender, EventArgs e)
