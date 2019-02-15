@@ -53,11 +53,25 @@ namespace TravelAgencySiteClient
                 += TabControlAdmin_SelectedIndexChanged;
             // Country tab
             this.buttonAddCountry.Click += ButtonAddCountry_Click;
+            this.buttonDelCountry.Click += ButtonDelCountry_Click;
             // City tab
             this.buttonAddCity.Click += ButtonAddCity_Click;
             // Hotel tab
             this.buttonAddHotel.Click += ButtonAddHotel_Click;
             this.textBoxHotelCost.TextChanged += TextBoxHotelCost_TextChanged;
+        }
+
+        private async void ButtonDelCountry_Click(object sender, EventArgs e)
+        {
+            string delCountry
+                = this.dataGridViewCountries
+                .SelectedRows[0]
+                .Cells["countryName"]
+                .Value.ToString();
+
+            responseJson = await api.DelCountryAsync(delCountry);
+
+            Console.WriteLine("Delete: " + delCountry + " = " + responseJson );
         }
 
         private void TextBoxHotelCost_TextChanged(object sender, EventArgs e)
@@ -93,8 +107,6 @@ namespace TravelAgencySiteClient
             this.textBoxHotelDesc.Text = "";
 
             this.AddNewHotel(hotel);
-
-            // TODO добавление отеля
         }
 
         private async void AddNewHotel(Hotel hotel)
