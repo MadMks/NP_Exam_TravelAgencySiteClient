@@ -118,20 +118,20 @@
             // dataGridViewTours
             // 
             this.dataGridViewTours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTours.Location = new System.Drawing.Point(13, 123);
+            this.dataGridViewTours.Location = new System.Drawing.Point(13, 113);
             this.dataGridViewTours.MultiSelect = false;
             this.dataGridViewTours.Name = "dataGridViewTours";
             this.dataGridViewTours.ReadOnly = true;
             this.dataGridViewTours.RowTemplate.Height = 23;
             this.dataGridViewTours.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewTours.Size = new System.Drawing.Size(544, 250);
+            this.dataGridViewTours.Size = new System.Drawing.Size(544, 260);
             this.dataGridViewTours.TabIndex = 5;
             // 
             // comboBoxCities
             // 
             this.comboBoxCities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCities.FormattingEnabled = true;
-            this.comboBoxCities.Location = new System.Drawing.Point(64, 66);
+            this.comboBoxCities.Location = new System.Drawing.Point(64, 70);
             this.comboBoxCities.Name = "comboBoxCities";
             this.comboBoxCities.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCities.TabIndex = 3;
@@ -140,7 +140,7 @@
             // 
             this.comboBoxCountries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCountries.FormattingEnabled = true;
-            this.comboBoxCountries.Location = new System.Drawing.Point(64, 39);
+            this.comboBoxCountries.Location = new System.Drawing.Point(64, 43);
             this.comboBoxCountries.Name = "comboBoxCountries";
             this.comboBoxCountries.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCountries.TabIndex = 1;
@@ -537,7 +537,7 @@
             // labelForCBoxCountry
             // 
             this.labelForCBoxCountry.AutoSize = true;
-            this.labelForCBoxCountry.Location = new System.Drawing.Point(10, 42);
+            this.labelForCBoxCountry.Location = new System.Drawing.Point(10, 46);
             this.labelForCBoxCountry.Name = "labelForCBoxCountry";
             this.labelForCBoxCountry.Size = new System.Drawing.Size(48, 13);
             this.labelForCBoxCountry.TabIndex = 6;
@@ -546,7 +546,7 @@
             // labelForCBoxCity
             // 
             this.labelForCBoxCity.AutoSize = true;
-            this.labelForCBoxCity.Location = new System.Drawing.Point(10, 69);
+            this.labelForCBoxCity.Location = new System.Drawing.Point(10, 73);
             this.labelForCBoxCity.Name = "labelForCBoxCity";
             this.labelForCBoxCity.Size = new System.Drawing.Size(42, 13);
             this.labelForCBoxCity.TabIndex = 7;

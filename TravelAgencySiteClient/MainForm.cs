@@ -29,9 +29,6 @@ namespace TravelAgencySiteClient
         {
             api = new ApiTravelAgency();
 
-            this.comboBoxCities.Enabled = false;
-            //this.buttonSelectCity.Enabled = false;
-
             this.FillingDataComboBoxCountries();
 
             this.tabControl.SelectedIndexChanged 
@@ -39,8 +36,6 @@ namespace TravelAgencySiteClient
 
 
             // Tours tab
-            //this.buttonSelectCountry.Click += ButtonSelectCountry_Click;
-            //this.buttonSelectCity.Click += ButtonSelectCity_Click;
             this.dataGridViewTours.CellDoubleClick 
                 += DataGridViewTours_CellDoubleClick;
             this.comboBoxCountries.SelectedIndexChanged 
@@ -263,8 +258,6 @@ namespace TravelAgencySiteClient
             this.AddNewCountry(country);
 
             this.textBoxAddCountry.Text = "";
-
-            
         }
 
         private void ButtonAddCity_Click(object sender, EventArgs e)
@@ -275,8 +268,6 @@ namespace TravelAgencySiteClient
             this.AddNewCity(country, city);
 
             this.textBoxAddCity.Text = "";
-
-            
         }
 
 
@@ -353,17 +344,6 @@ namespace TravelAgencySiteClient
             descForm.Show();
         }
 
-        private void ButtonSelectCity_Click(object sender, EventArgs e)
-        {
-            //// Выбранная страна.
-            //string country = comboBoxCountries.SelectedItem.ToString();
-            //// Выбранный город.
-            //string city = comboBoxCities.SelectedItem.ToString();
-
-            //// Заполнение таблицы отелей.
-            //this.FillingDataGridViewHotels(country, city);
-        }
-
         private async void FillingDataGridViewHotels(string country, string city)
         {
             responseJson = await api.LoadHotelsDataAsync(country, city);
@@ -372,20 +352,10 @@ namespace TravelAgencySiteClient
 
             this.dataGridViewTours.DataSource
                 = JsonConvert.DeserializeObject<List<Hotel>>(responseJson)
-                //.Select(TODO только то чно нужно ИЛИ все)
                 .ToList();
 
             this.dataGridViewTours.Columns["cityName"].Visible = false;
             this.dataGridViewTours.Columns["countryName"].Visible = false;
-        }
-
-        private void ButtonSelectCountry_Click(object sender, EventArgs e)
-        {
-            //// Выбранная страна.
-            //string country = comboBoxCountries.SelectedItem.ToString();
-
-            //// Заполнение списка городов.
-            //this.FillingDataComboBoxCities(country);
         }
 
         private async void FillingDataComboBoxCities(string country)
@@ -395,27 +365,15 @@ namespace TravelAgencySiteClient
             this.comboBoxCities.DataSource
                 = JsonConvert.DeserializeObject<List<City>>(responseJson)
                 .Select(c => c.cityName).ToList();
-
-            // Включение комбоБокса и кнопки для выбора города.
-            this.comboBoxCities.Enabled = true;
-            //this.buttonSelectCity.Enabled = true;
         }
 
         private async void FillingDataComboBoxCountries()
         {
-            Console.WriteLine(">>> loading Countries");
-
-            //this.comboBoxCountries.UseWaitCursor = true;  // TODO ???
-            //this.buttonSelectCountry.Enabled = false;
-
             responseJson = await api.LoadCountriesDataAsync();
 
             this.comboBoxCountries.DataSource
                 = JsonConvert.DeserializeObject<List<Country>>(responseJson)
                 .Select(c => c.countryName).ToList();
-
-            //this.comboBoxCountries.UseWaitCursor = false;   // TODO ???
-            //this.buttonSelectCountry.Enabled = true;
         }
 
         private async void TabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -427,7 +385,6 @@ namespace TravelAgencySiteClient
             // Для вкаладки регистрация ничего не подгружаем.
             else if (tabControl.SelectedTab.Name == tabPageAdminForm.Name)
             {
-                Console.WriteLine("TODO: loading admins data all table");
                 await LoadAllCountriesForAdminTab();
             }
         }
