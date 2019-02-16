@@ -47,6 +47,7 @@
             this.ClientSize = new System.Drawing.Size(567, 295);
             this.Controls.Add(this.textBoxDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "DescForm";
             this.Text = "Описание отеля";
             this.ResumeLayout(false);
