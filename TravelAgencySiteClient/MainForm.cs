@@ -60,7 +60,18 @@ namespace TravelAgencySiteClient
             // Hotel tab
             this.buttonAddHotel.Click += ButtonAddHotel_Click;
             this.buttonDelHotel.Click += ButtonDelHotel_Click;
-            this.textBoxHotelCost.TextChanged += TextBoxHotelCost_TextChanged;
+            this.textBoxHotelCost.KeyPress += TextBoxHotelCost_KeyPress;
+        }
+
+        private void TextBoxHotelCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Ввод в текстБокс только цифр
+            char number = e.KeyChar;
+
+            if (!Char.IsDigit(number))
+            {
+                e.Handled = true;
+            }
         }
 
         private void ComboBoxCities_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,23 +150,17 @@ namespace TravelAgencySiteClient
             await LoadAllCountriesForAdminTab();
         }
 
-        private void TextBoxHotelCost_TextChanged(object sender, EventArgs e)
-        {
-            // TODO вместо пустой строки - 0
-            // TODO только цыфры (возможно в другом обработчике).
-        }
-
         private void ButtonAddHotel_Click(object sender, EventArgs e)
         {
             // TODO проверка заполнения полей
-            // TODO ввод только цыфр в поле цены.
 
             Hotel hotel = new Hotel();
 
             hotel.hotelName = this.textBoxHotelName.Text;
             hotel.countryName
                 = this.comboBoxHotelCityAndCountry.SelectedItem
-                .ToString()                .Split(':')[0]
+                .ToString()
+                .Split(':')[0]
                 .TrimEnd();
             hotel.cityName 
                 = this.comboBoxHotelCityAndCountry.SelectedItem
