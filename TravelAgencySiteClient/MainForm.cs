@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TravelAgencySiteClient.DescriptionForm;
 using TravelAgencySiteClient.Entities;
 
 namespace TravelAgencySiteClient
@@ -338,8 +339,18 @@ namespace TravelAgencySiteClient
         private void DataGridViewTours_CellDoubleClick
             (object sender, DataGridViewCellEventArgs e)
         {
+            string hotel 
+                = this.dataGridViewTours.SelectedCells[1].Value.ToString();
+            string desc 
+                = this.dataGridViewTours.SelectedCells[6].Value.ToString();
+
             Console.WriteLine("Показываем страницу отеля");
             Console.WriteLine((sender as DataGridView).SelectedCells[1].Value);
+
+            DescForm descForm = new DescForm();
+            descForm.Text += ": " + hotel;
+            descForm.Description = desc;
+            descForm.Show();
         }
 
         private void ButtonSelectCity_Click(object sender, EventArgs e)

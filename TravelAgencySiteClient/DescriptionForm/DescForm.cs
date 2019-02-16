@@ -12,6 +12,13 @@ namespace TravelAgencySiteClient.DescriptionForm
 {
     public partial class DescForm : Form
     {
+        public string Description
+        {
+            get { return textBoxDescription.Text; }
+            set { textBoxDescription.Text = value; }
+        }
+
+
         public DescForm()
         {
             InitializeComponent();
