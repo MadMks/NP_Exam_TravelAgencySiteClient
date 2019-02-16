@@ -31,9 +31,7 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageTours = new System.Windows.Forms.TabPage();
             this.dataGridViewTours = new System.Windows.Forms.DataGridView();
-            this.buttonSelectCity = new System.Windows.Forms.Button();
             this.comboBoxCities = new System.Windows.Forms.ComboBox();
-            this.buttonSelectCountry = new System.Windows.Forms.Button();
             this.comboBoxCountries = new System.Windows.Forms.ComboBox();
             this.labelSelectTours = new System.Windows.Forms.Label();
             this.tabPageRegistration = new System.Windows.Forms.TabPage();
@@ -73,6 +71,8 @@
             this.dataGridViewHotels = new System.Windows.Forms.DataGridView();
             this.buttonDelHotel = new System.Windows.Forms.Button();
             this.buttonAddHotel = new System.Windows.Forms.Button();
+            this.labelForCBoxCountry = new System.Windows.Forms.Label();
+            this.labelForCBoxCity = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageTours.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).BeginInit();
@@ -101,10 +101,10 @@
             // 
             // tabPageTours
             // 
+            this.tabPageTours.Controls.Add(this.labelForCBoxCity);
+            this.tabPageTours.Controls.Add(this.labelForCBoxCountry);
             this.tabPageTours.Controls.Add(this.dataGridViewTours);
-            this.tabPageTours.Controls.Add(this.buttonSelectCity);
             this.tabPageTours.Controls.Add(this.comboBoxCities);
-            this.tabPageTours.Controls.Add(this.buttonSelectCountry);
             this.tabPageTours.Controls.Add(this.comboBoxCountries);
             this.tabPageTours.Controls.Add(this.labelSelectTours);
             this.tabPageTours.Location = new System.Drawing.Point(4, 22);
@@ -127,38 +127,20 @@
             this.dataGridViewTours.Size = new System.Drawing.Size(544, 250);
             this.dataGridViewTours.TabIndex = 5;
             // 
-            // buttonSelectCity
-            // 
-            this.buttonSelectCity.Location = new System.Drawing.Point(153, 82);
-            this.buttonSelectCity.Name = "buttonSelectCity";
-            this.buttonSelectCity.Size = new System.Drawing.Size(105, 23);
-            this.buttonSelectCity.TabIndex = 4;
-            this.buttonSelectCity.Text = "Выбрать город";
-            this.buttonSelectCity.UseVisualStyleBackColor = true;
-            // 
             // comboBoxCities
             // 
             this.comboBoxCities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCities.FormattingEnabled = true;
-            this.comboBoxCities.Location = new System.Drawing.Point(10, 82);
+            this.comboBoxCities.Location = new System.Drawing.Point(64, 66);
             this.comboBoxCities.Name = "comboBoxCities";
             this.comboBoxCities.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCities.TabIndex = 3;
-            // 
-            // buttonSelectCountry
-            // 
-            this.buttonSelectCountry.Location = new System.Drawing.Point(153, 44);
-            this.buttonSelectCountry.Name = "buttonSelectCountry";
-            this.buttonSelectCountry.Size = new System.Drawing.Size(105, 23);
-            this.buttonSelectCountry.TabIndex = 2;
-            this.buttonSelectCountry.Text = "Выбрать страну";
-            this.buttonSelectCountry.UseVisualStyleBackColor = true;
             // 
             // comboBoxCountries
             // 
             this.comboBoxCountries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCountries.FormattingEnabled = true;
-            this.comboBoxCountries.Location = new System.Drawing.Point(10, 44);
+            this.comboBoxCountries.Location = new System.Drawing.Point(64, 39);
             this.comboBoxCountries.Name = "comboBoxCountries";
             this.comboBoxCountries.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCountries.TabIndex = 1;
@@ -168,9 +150,9 @@
             this.labelSelectTours.AutoSize = true;
             this.labelSelectTours.Location = new System.Drawing.Point(7, 16);
             this.labelSelectTours.Name = "labelSelectTours";
-            this.labelSelectTours.Size = new System.Drawing.Size(66, 13);
+            this.labelSelectTours.Size = new System.Drawing.Size(70, 13);
             this.labelSelectTours.TabIndex = 0;
-            this.labelSelectTours.Text = "Выбор тура";
+            this.labelSelectTours.Text = "Выбор тура:";
             // 
             // tabPageRegistration
             // 
@@ -552,6 +534,24 @@
             this.buttonAddHotel.Text = "Добавить";
             this.buttonAddHotel.UseVisualStyleBackColor = true;
             // 
+            // labelForCBoxCountry
+            // 
+            this.labelForCBoxCountry.AutoSize = true;
+            this.labelForCBoxCountry.Location = new System.Drawing.Point(10, 42);
+            this.labelForCBoxCountry.Name = "labelForCBoxCountry";
+            this.labelForCBoxCountry.Size = new System.Drawing.Size(48, 13);
+            this.labelForCBoxCountry.TabIndex = 6;
+            this.labelForCBoxCountry.Text = "Страна:";
+            // 
+            // labelForCBoxCity
+            // 
+            this.labelForCBoxCity.AutoSize = true;
+            this.labelForCBoxCity.Location = new System.Drawing.Point(10, 69);
+            this.labelForCBoxCity.Name = "labelForCBoxCity";
+            this.labelForCBoxCity.Size = new System.Drawing.Size(42, 13);
+            this.labelForCBoxCity.TabIndex = 7;
+            this.labelForCBoxCity.Text = "Город:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -591,9 +591,7 @@
         private System.Windows.Forms.TabPage tabPageAdminForm;
         private System.Windows.Forms.Label labelSelectTours;
         private System.Windows.Forms.DataGridView dataGridViewTours;
-        private System.Windows.Forms.Button buttonSelectCity;
         private System.Windows.Forms.ComboBox comboBoxCities;
-        private System.Windows.Forms.Button buttonSelectCountry;
         private System.Windows.Forms.ComboBox comboBoxCountries;
         private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.TextBox textBoxEmail;
@@ -630,6 +628,8 @@
         private System.Windows.Forms.DataGridView dataGridViewHotels;
         private System.Windows.Forms.Button buttonDelHotel;
         private System.Windows.Forms.Button buttonAddHotel;
+        private System.Windows.Forms.Label labelForCBoxCity;
+        private System.Windows.Forms.Label labelForCBoxCountry;
     }
 }
 

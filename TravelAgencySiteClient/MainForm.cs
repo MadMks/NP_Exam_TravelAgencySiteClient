@@ -30,7 +30,7 @@ namespace TravelAgencySiteClient
             api = new ApiTravelAgency();
 
             this.comboBoxCities.Enabled = false;
-            this.buttonSelectCity.Enabled = false;
+            //this.buttonSelectCity.Enabled = false;
 
             this.FillingDataComboBoxCountries();
 
@@ -398,7 +398,7 @@ namespace TravelAgencySiteClient
 
             // Включение комбоБокса и кнопки для выбора города.
             this.comboBoxCities.Enabled = true;
-            this.buttonSelectCity.Enabled = true;
+            //this.buttonSelectCity.Enabled = true;
         }
 
         private async void FillingDataComboBoxCountries()
@@ -406,7 +406,7 @@ namespace TravelAgencySiteClient
             Console.WriteLine(">>> loading Countries");
 
             //this.comboBoxCountries.UseWaitCursor = true;  // TODO ???
-            this.buttonSelectCountry.Enabled = false;
+            //this.buttonSelectCountry.Enabled = false;
 
             responseJson = await api.LoadCountriesDataAsync();
 
@@ -415,7 +415,7 @@ namespace TravelAgencySiteClient
                 .Select(c => c.countryName).ToList();
 
             //this.comboBoxCountries.UseWaitCursor = false;   // TODO ???
-            this.buttonSelectCountry.Enabled = true;
+            //this.buttonSelectCountry.Enabled = true;
         }
 
         private async void TabControl_SelectedIndexChanged(object sender, EventArgs e)
