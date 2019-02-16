@@ -262,12 +262,23 @@ namespace TravelAgencySiteClient
 
         private void ButtonAddCity_Click(object sender, EventArgs e)
         {
-            // TODO проверитть на заполненность текстбокса.
-            string country = this.comboBoxCountriesForAddCity.SelectedItem as string;
-            string city = this.textBoxAddCity.Text;
-            this.AddNewCity(country, city);
+            if (!String.IsNullOrEmpty(textBoxAddCity.Text))
+            {
+                string country = this.comboBoxCountriesForAddCity.SelectedItem as string;
+                string city = this.textBoxAddCity.Text;
 
-            this.textBoxAddCity.Text = "";
+                this.textBoxAddCity.Text = "";
+
+                this.AddNewCity(country, city);
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Введите название города!",
+                    "Не заполнено поле!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
 
@@ -302,7 +313,7 @@ namespace TravelAgencySiteClient
             else
             {
                 MessageBox.Show(
-                    "Нужно заполнить все поля!",
+                    "Заполните все поля!",
                     "Не заполнены поля!",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -311,7 +322,6 @@ namespace TravelAgencySiteClient
 
         private bool IsRegFieldsAreFilled()
         {
-            // TODO проверка на заполнение всех полей.
             if (String.IsNullOrEmpty(textBoxLogin.Text)
                 || String.IsNullOrEmpty(textBoxPassword.Text)
                 || String.IsNullOrEmpty(textBoxEmail.Text))
