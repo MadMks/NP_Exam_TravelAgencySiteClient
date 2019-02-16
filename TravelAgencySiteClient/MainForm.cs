@@ -291,13 +291,35 @@ namespace TravelAgencySiteClient
 
         private void ButtonRegister_Click(object sender, EventArgs e)
         {
+            if (this.IsRegFieldsAreFilled())
+            {
+                string login = textBoxLogin.Text;
+                string pass = textBoxPassword.Text;
+                string email = textBoxEmail.Text;
+
+                this.NewUserRegistration(login, pass, email);
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Нужно заполнить все поля!",
+                    "Не заполнены поля!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private bool IsRegFieldsAreFilled()
+        {
             // TODO проверка на заполнение всех полей.
+            if (String.IsNullOrEmpty(textBoxLogin.Text)
+                || String.IsNullOrEmpty(textBoxPassword.Text)
+                || String.IsNullOrEmpty(textBoxEmail.Text))
+            {
+                return false;
+            }
 
-            string login = textBoxLogin.Text;
-            string pass = textBoxPassword.Text;
-            string email = textBoxEmail.Text;
-
-            this.NewUserRegistration(login, pass, email);
+            return true;
         }
 
         private async void NewUserRegistration(string login, string pass, string email)
