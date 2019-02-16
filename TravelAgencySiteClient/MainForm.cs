@@ -210,7 +210,7 @@ namespace TravelAgencySiteClient
                 .ToList();
         }
 
-        private async void ButtonAddCountry_Click(object sender, EventArgs e)
+        private void ButtonAddCountry_Click(object sender, EventArgs e)
         {
             // TODO проверитть на заполненность текстбокса.
             string country = textBoxAddCountry.Text;
@@ -221,7 +221,7 @@ namespace TravelAgencySiteClient
             
         }
 
-        private async void ButtonAddCity_Click(object sender, EventArgs e)
+        private void ButtonAddCity_Click(object sender, EventArgs e)
         {
             // TODO проверитть на заполненность текстбокса.
             string country = this.comboBoxCountriesForAddCity.SelectedItem as string;
