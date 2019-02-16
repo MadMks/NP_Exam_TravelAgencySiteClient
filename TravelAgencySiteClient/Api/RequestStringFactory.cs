@@ -140,5 +140,15 @@ namespace TravelAgencySiteClient
 
             return requestStr;
         }
+
+        public string GenerateDelHotel(string hotelId)
+        {
+            string requestStr =
+                "token=" + token +
+                "&param=" + QueryValue.delHotel +
+                "&hotelId=" + hotelId;
+
+            return requestStr;
+        }
     }
 }

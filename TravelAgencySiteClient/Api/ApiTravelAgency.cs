@@ -128,8 +128,6 @@ namespace TravelAgencySiteClient
 
         public async Task<string> DelCountryAsync(string countryId)
         {
-            //string obj = JsonConvert.SerializeObject(new Country(delCountry));
-
             string request = requestFactory.GenerateDelCountry(countryId);
 
             return await LoadDataAsync(request);
@@ -142,6 +140,13 @@ namespace TravelAgencySiteClient
             return await LoadDataAsync(request);
         }
 
+        public async Task<string> DelHotelAsync(string hotelId)
+        {
+            string request = requestFactory.GenerateDelHotel(hotelId);
+
+            return await LoadDataAsync(request);
+        }
+
 
         //
         // Загрузка данных.
@@ -150,7 +155,7 @@ namespace TravelAgencySiteClient
         private async Task<string> LoadDataAsync(string requestStr)
         {
             WebRequest request = WebRequest
-                .Create("http://localhost:81/apiExem/api.php");
+                .Create("http://localhost:81/apiExem/api.php"); // TODO константа, или передаваемое значение.
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
 

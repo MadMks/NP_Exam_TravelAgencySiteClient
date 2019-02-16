@@ -59,7 +59,26 @@ namespace TravelAgencySiteClient
             this.buttonDelCity.Click += ButtonDelCity_Click;
             // Hotel tab
             this.buttonAddHotel.Click += ButtonAddHotel_Click;
+            this.buttonDelHotel.Click += ButtonDelHotel_Click;
             this.textBoxHotelCost.TextChanged += TextBoxHotelCost_TextChanged;
+        }
+
+        private void ButtonDelHotel_Click(object sender, EventArgs e)
+        {
+            string hotelId =
+                this.dataGridViewHotels
+                .SelectedRows[0]
+                .Cells["id"]
+                .Value.ToString();
+            Console.WriteLine("hotel id = " + hotelId);
+            this.DelHotel(hotelId);
+        }
+
+        private async void DelHotel(string hotelId)
+        {
+            responseJson = await api.DelHotelAsync(hotelId);
+
+            await LoadAllHotelsForAdminTab();
         }
 
         private void ButtonDelCity_Click(object sender, EventArgs e)
@@ -140,6 +159,8 @@ namespace TravelAgencySiteClient
             responseJson = await api.AddHotelAsync(hotel);
 
             Console.WriteLine("AddNewHotel: " + responseJson);
+
+            await LoadAllHotelsForAdminTab();
         }
 
         private async void TabControlAdmin_SelectedIndexChanged(object sender, EventArgs e)
@@ -162,7 +183,7 @@ namespace TravelAgencySiteClient
             {
                 Console.WriteLine(">> Загрузка отелей");
 
-                await FillingDataGridAllHotelsForAdminTab();
+                await LoadAllHotelsForAdminTab();
 
                 await FillingDataComboBoxCityAndCountry();
             }
@@ -178,7 +199,7 @@ namespace TravelAgencySiteClient
                 .ToList<string>();
         }
 
-        private async Task FillingDataGridAllHotelsForAdminTab()
+        private async Task LoadAllHotelsForAdminTab()
         {
             responseJson = await api.LoadAllHotelsDataAsync();
 
