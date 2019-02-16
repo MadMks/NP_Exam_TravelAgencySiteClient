@@ -322,9 +322,6 @@ namespace TravelAgencySiteClient
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-
-            // DEBUG
-            Console.WriteLine("Ответ при регистрации User: " + responseJson);
         }
 
         private void DataGridViewTours_CellDoubleClick
@@ -383,6 +380,7 @@ namespace TravelAgencySiteClient
                 this.FillingDataComboBoxCountries();
             }
             // Для вкаладки регистрация ничего не подгружаем.
+            // Для вкладки админа загрузим по умолчанию все страны.
             else if (tabControl.SelectedTab.Name == tabPageAdminForm.Name)
             {
                 await LoadAllCountriesForAdminTab();
