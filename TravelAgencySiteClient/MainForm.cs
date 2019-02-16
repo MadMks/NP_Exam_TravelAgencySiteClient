@@ -243,7 +243,6 @@ namespace TravelAgencySiteClient
 
         private async Task LoadAllCitiesForAdminTab()
         {
-            // Загрузка всех городов
             responseJson = await api.LoadAllCitiesDataAsync();
 
             this.dataGridViewCities.DataSource
@@ -253,11 +252,23 @@ namespace TravelAgencySiteClient
 
         private void ButtonAddCountry_Click(object sender, EventArgs e)
         {
-            // TODO проверитть на заполненность текстбокса.
-            string country = textBoxAddCountry.Text;
-            this.AddNewCountry(country);
+            if (!String.IsNullOrEmpty(textBoxAddCountry.Text))
+            {
+                string country = textBoxAddCountry.Text;
 
-            this.textBoxAddCountry.Text = "";
+                this.textBoxAddCountry.Text = "";
+
+                this.AddNewCountry(country);
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Введите название страны!",
+                    "Не заполнено поле!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            
         }
 
         private void ButtonAddCity_Click(object sender, EventArgs e)
