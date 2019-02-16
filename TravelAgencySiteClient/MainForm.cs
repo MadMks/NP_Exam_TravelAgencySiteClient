@@ -38,10 +38,14 @@ namespace TravelAgencySiteClient
 
 
             // Tours tab
-            this.buttonSelectCountry.Click += ButtonSelectCountry_Click;
-            this.buttonSelectCity.Click += ButtonSelectCity_Click;
+            //this.buttonSelectCountry.Click += ButtonSelectCountry_Click;
+            //this.buttonSelectCity.Click += ButtonSelectCity_Click;
             this.dataGridViewTours.CellDoubleClick 
                 += DataGridViewTours_CellDoubleClick;
+            this.comboBoxCountries.SelectedIndexChanged 
+                += ComboBoxCountries_SelectedIndexChanged;
+            this.comboBoxCities.SelectedIndexChanged
+                += ComboBoxCities_SelectedIndexChanged;
 
 
             // Register tab
@@ -61,6 +65,26 @@ namespace TravelAgencySiteClient
             this.buttonAddHotel.Click += ButtonAddHotel_Click;
             this.buttonDelHotel.Click += ButtonDelHotel_Click;
             this.textBoxHotelCost.TextChanged += TextBoxHotelCost_TextChanged;
+        }
+
+        private void ComboBoxCities_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Выбранная страна.
+            string country = comboBoxCountries.SelectedItem.ToString();
+            // Выбранный город.
+            string city = comboBoxCities.SelectedItem.ToString();
+
+            // Заполнение таблицы отелей.
+            this.FillingDataGridViewHotels(country, city);
+        }
+
+        private void ComboBoxCountries_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Выбранная страна.
+            string country = comboBoxCountries.SelectedItem.ToString();
+
+            // Заполнение списка городов.
+            this.FillingDataComboBoxCities(country);
         }
 
         private void ButtonDelHotel_Click(object sender, EventArgs e)
@@ -320,13 +344,13 @@ namespace TravelAgencySiteClient
 
         private void ButtonSelectCity_Click(object sender, EventArgs e)
         {
-            // Выбранная страна.
-            string country = comboBoxCountries.SelectedItem.ToString();
-            // Выбранный город.
-            string city = comboBoxCities.SelectedItem.ToString();
+            //// Выбранная страна.
+            //string country = comboBoxCountries.SelectedItem.ToString();
+            //// Выбранный город.
+            //string city = comboBoxCities.SelectedItem.ToString();
 
-            // Заполнение таблицы отелей.
-            this.FillingDataGridViewHotels(country, city);
+            //// Заполнение таблицы отелей.
+            //this.FillingDataGridViewHotels(country, city);
         }
 
         private async void FillingDataGridViewHotels(string country, string city)
@@ -346,11 +370,11 @@ namespace TravelAgencySiteClient
 
         private void ButtonSelectCountry_Click(object sender, EventArgs e)
         {
-            // Выбранная страна.
-            string country = comboBoxCountries.SelectedItem.ToString();
+            //// Выбранная страна.
+            //string country = comboBoxCountries.SelectedItem.ToString();
 
-            // Заполнение списка городов.
-            this.FillingDataComboBoxCities(country);
+            //// Заполнение списка городов.
+            //this.FillingDataComboBoxCities(country);
         }
 
         private async void FillingDataComboBoxCities(string country)
