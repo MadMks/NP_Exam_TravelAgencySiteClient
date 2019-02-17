@@ -13,6 +13,7 @@ namespace TravelAgencySiteClient
 {
     class ApiTravelAgency
     {
+        private const string URI_API = "http://localhost:81/apiExem/api.php";
         private const string TOKEN = "ps_rpo_1";
         private RequestStringFactory requestFactory = null;
 
@@ -154,8 +155,7 @@ namespace TravelAgencySiteClient
 
         private async Task<string> LoadDataAsync(string requestStr)
         {
-            WebRequest request = WebRequest
-                .Create("http://localhost:81/apiExem/api.php"); // TODO константа, или передаваемое значение.
+            WebRequest request = WebRequest.Create(URI_API);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
 
