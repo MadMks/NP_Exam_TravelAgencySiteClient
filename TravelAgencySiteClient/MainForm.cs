@@ -31,6 +31,7 @@ namespace TravelAgencySiteClient
 
             this.FillingDataComboBoxCountries();
 
+            // Tabs
             this.tabControl.SelectedIndexChanged 
                 += TabControl_SelectedIndexChanged;
 
@@ -101,7 +102,7 @@ namespace TravelAgencySiteClient
                 .SelectedRows[0]
                 .Cells["id"]
                 .Value.ToString();
-            Console.WriteLine("hotel id = " + hotelId);
+            
             this.DelHotel(hotelId);
         }
 
@@ -119,7 +120,7 @@ namespace TravelAgencySiteClient
                 .SelectedRows[0]
                 .Cells["id"]
                 .Value.ToString();
-            Console.WriteLine("city id = " + cityId);
+            
             this.DelCity(cityId);
         }
 
@@ -144,8 +145,6 @@ namespace TravelAgencySiteClient
         private async void DelCountry(string countryId)
         {
             responseJson = await api.DelCountryAsync(countryId);
-
-            Console.WriteLine("Delete id: " + countryId + " = " + responseJson);
 
             await LoadAllCountriesForAdminTab();
         }
@@ -206,8 +205,6 @@ namespace TravelAgencySiteClient
         {
             responseJson = await api.AddHotelAsync(hotel);
 
-            Console.WriteLine("AddNewHotel: " + responseJson);
-
             await LoadAllHotelsForAdminTab();
         }
 
@@ -215,22 +212,16 @@ namespace TravelAgencySiteClient
         {
             if (tabControlAdmin.SelectedTab.Name == tabPageCountries.Name)
             {
-                Console.WriteLine(">> Загрузка стран");
-
                 await LoadAllCountriesForAdminTab();
             }
             else if (tabControlAdmin.SelectedTab.Name == tabPageCities.Name)
             {
-                Console.WriteLine(">> Загрузка городов");
-
                 await LoadAllCitiesForAdminTab();
 
                 this.FillingDataComboBoxAllCountries();
             }
             else if (tabControlAdmin.SelectedTab.Name == tabPageHotels.Name)
             {
-                Console.WriteLine(">> Загрузка отелей");
-
                 await LoadAllHotelsForAdminTab();
 
                 await FillingDataComboBoxCityAndCountry();
@@ -324,8 +315,6 @@ namespace TravelAgencySiteClient
         private async void AddNewCountry(string country)
         {
             responseJson = await api.AddCountryAsync(country);
-
-            Console.WriteLine("AddNewCountry: " + responseJson);
             
             await LoadAllCountriesForAdminTab();
         }
@@ -333,9 +322,7 @@ namespace TravelAgencySiteClient
         private async void AddNewCity(string country, string city)
         {
             responseJson = await api.AddCityAsync(country, city);
-
-            Console.WriteLine("AddNewCity: " + responseJson);
-
+            
             await LoadAllCitiesForAdminTab();
         }
 
@@ -402,9 +389,7 @@ namespace TravelAgencySiteClient
                 = this.dataGridViewTours.SelectedCells[1].Value.ToString();
             string desc 
                 = this.dataGridViewTours.SelectedCells[6].Value.ToString();
-
-            Console.WriteLine("Показываем страницу отеля");
-            Console.WriteLine((sender as DataGridView).SelectedCells[1].Value);
+            
 
             DescForm descForm = new DescForm();
             descForm.Text += ": " + hotel;
@@ -415,9 +400,7 @@ namespace TravelAgencySiteClient
         private async void FillingDataGridViewHotels(string country, string city)
         {
             responseJson = await api.LoadHotelsDataAsync(country, city);
-
-            Console.WriteLine(" > Загрузка отелей в таблицу.");
-
+            
             this.dataGridViewTours.DataSource
                 = JsonConvert.DeserializeObject<List<Hotel>>(responseJson)
                 .ToList();

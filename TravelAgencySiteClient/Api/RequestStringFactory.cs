@@ -15,13 +15,6 @@ namespace TravelAgencySiteClient
             this.token = token;
         }
 
-        //public string Generate(string queryCountries)
-        //{
-        //    string requestStr = "TODO: " + token;
-
-        //    return requestStr;
-        //}
-
         public string GenerateCountries()
         {
             string requestStr = 

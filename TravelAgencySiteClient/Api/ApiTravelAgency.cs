@@ -20,8 +20,6 @@ namespace TravelAgencySiteClient
         public ApiTravelAgency()
         {
             requestFactory = new RequestStringFactory(TOKEN);
-
-            // TODO: настройки для класса Апи.
         }
 
 
