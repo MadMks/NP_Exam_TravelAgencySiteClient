@@ -152,31 +152,54 @@ namespace TravelAgencySiteClient
 
         private void ButtonAddHotel_Click(object sender, EventArgs e)
         {
-            // TODO проверка заполнения полей
+            if (this.IsAddHotelFieldsAreFilled())
+            {
+                Hotel hotel = new Hotel();
 
-            Hotel hotel = new Hotel();
+                hotel.hotelName = this.textBoxHotelName.Text;
+                hotel.countryName
+                    = this.comboBoxHotelCityAndCountry.SelectedItem
+                    .ToString()
+                    .Split(':')[0]
+                    .TrimEnd();
+                hotel.cityName
+                    = this.comboBoxHotelCityAndCountry.SelectedItem
+                    .ToString()
+                    .Split(':')[1]
+                    .TrimStart();
+                hotel.stars = Convert.ToInt32(this.numericUpDownHotelStars.Value);
+                hotel.cost = Convert.ToInt32(this.textBoxHotelCost.Text);
+                hotel.info = this.textBoxHotelDesc.Text;
 
-            hotel.hotelName = this.textBoxHotelName.Text;
-            hotel.countryName
-                = this.comboBoxHotelCityAndCountry.SelectedItem
-                .ToString()
-                .Split(':')[0]
-                .TrimEnd();
-            hotel.cityName 
-                = this.comboBoxHotelCityAndCountry.SelectedItem
-                .ToString()
-                .Split(':')[1]
-                .TrimStart();
-            hotel.stars = Convert.ToInt32(this.numericUpDownHotelStars.Value);
-            hotel.cost = Convert.ToInt32(this.textBoxHotelCost.Text);
-            hotel.info = this.textBoxHotelDesc.Text;
+                this.textBoxHotelName.Text = "";
+                this.textBoxHotelCost.Text = "0";
+                this.numericUpDownHotelStars.Value = 1;
+                this.textBoxHotelDesc.Text = "";
 
-            this.textBoxHotelName.Text = "";
-            this.textBoxHotelCost.Text = "0";
-            this.numericUpDownHotelStars.Value = 1;
-            this.textBoxHotelDesc.Text = "";
+                this.AddNewHotel(hotel);
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Заполните все поля!",
+                    "Не заполнены поля!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
 
-            this.AddNewHotel(hotel);
+            
+        }
+
+        private bool IsAddHotelFieldsAreFilled()
+        {
+            if (String.IsNullOrEmpty(textBoxHotelName.Text)
+                || String.IsNullOrEmpty(textBoxHotelCost.Text)
+                || String.IsNullOrEmpty(textBoxHotelDesc.Text))
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private async void AddNewHotel(Hotel hotel)
