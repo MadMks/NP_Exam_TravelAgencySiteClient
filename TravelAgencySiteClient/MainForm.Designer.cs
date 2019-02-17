@@ -30,6 +30,8 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageTours = new System.Windows.Forms.TabPage();
+            this.labelForCBoxCity = new System.Windows.Forms.Label();
+            this.labelForCBoxCountry = new System.Windows.Forms.Label();
             this.dataGridViewTours = new System.Windows.Forms.DataGridView();
             this.comboBoxCities = new System.Windows.Forms.ComboBox();
             this.comboBoxCountries = new System.Windows.Forms.ComboBox();
@@ -71,8 +73,6 @@
             this.dataGridViewHotels = new System.Windows.Forms.DataGridView();
             this.buttonDelHotel = new System.Windows.Forms.Button();
             this.buttonAddHotel = new System.Windows.Forms.Button();
-            this.labelForCBoxCountry = new System.Windows.Forms.Label();
-            this.labelForCBoxCity = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageTours.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTours)).BeginInit();
@@ -114,6 +114,24 @@
             this.tabPageTours.TabIndex = 0;
             this.tabPageTours.Text = "Туры";
             this.tabPageTours.UseVisualStyleBackColor = true;
+            // 
+            // labelForCBoxCity
+            // 
+            this.labelForCBoxCity.AutoSize = true;
+            this.labelForCBoxCity.Location = new System.Drawing.Point(10, 73);
+            this.labelForCBoxCity.Name = "labelForCBoxCity";
+            this.labelForCBoxCity.Size = new System.Drawing.Size(42, 13);
+            this.labelForCBoxCity.TabIndex = 7;
+            this.labelForCBoxCity.Text = "Город:";
+            // 
+            // labelForCBoxCountry
+            // 
+            this.labelForCBoxCountry.AutoSize = true;
+            this.labelForCBoxCountry.Location = new System.Drawing.Point(10, 46);
+            this.labelForCBoxCountry.Name = "labelForCBoxCountry";
+            this.labelForCBoxCountry.Size = new System.Drawing.Size(48, 13);
+            this.labelForCBoxCountry.TabIndex = 6;
+            this.labelForCBoxCountry.Text = "Страна:";
             // 
             // dataGridViewTours
             // 
@@ -534,30 +552,13 @@
             this.buttonAddHotel.Text = "Добавить";
             this.buttonAddHotel.UseVisualStyleBackColor = true;
             // 
-            // labelForCBoxCountry
-            // 
-            this.labelForCBoxCountry.AutoSize = true;
-            this.labelForCBoxCountry.Location = new System.Drawing.Point(10, 46);
-            this.labelForCBoxCountry.Name = "labelForCBoxCountry";
-            this.labelForCBoxCountry.Size = new System.Drawing.Size(48, 13);
-            this.labelForCBoxCountry.TabIndex = 6;
-            this.labelForCBoxCountry.Text = "Страна:";
-            // 
-            // labelForCBoxCity
-            // 
-            this.labelForCBoxCity.AutoSize = true;
-            this.labelForCBoxCity.Location = new System.Drawing.Point(10, 73);
-            this.labelForCBoxCity.Name = "labelForCBoxCity";
-            this.labelForCBoxCity.Size = new System.Drawing.Size(42, 13);
-            this.labelForCBoxCity.TabIndex = 7;
-            this.labelForCBoxCity.Text = "Город:";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 440);
             this.Controls.Add(this.tabControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Клиент сайта ТурАгенства";
